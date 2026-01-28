@@ -976,8 +976,71 @@
     </footer>
   </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<script>
+  // Footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Simple carousel logic (no libraries)
+  const carousels = {
+    docs: { index: 0 },
+    retain: { index: 0 }
+  };
+
+  function updateCarousel(id){
+    const carousel = document.querySelector(`.carousel[data-carousel-id="${id}"]`);
+    if(!carousel) return;
+    const track = carousel.querySelector(".track");
+    const slides = carousel.querySelectorAll(".slide");
+    const count = slides.length;
+
+    // clamp
+    if(carousels[id].index < 0) carousels[id].index = count - 1;
+    if(carousels[id].index >= count) carousels[id].index = 0;
+
+    const x = -carousels[id].index * 100;
+    track.style.transform = `translateX(${x}%)`;
+  }
+
+  document.querySelectorAll(".cbtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-carousel");
+      const dir = btn.getAttribute("data-dir");
+      if(!carousels[id]) return;
+
+      carousels[id].index += (dir === "next" ? 1 : -1);
+      updateCarousel(id);
+    });
+  });
+
+  // Init
+  updateCarousel("docs");
+  updateCarousel("retain");
+
+  // Swipe support (mobile)
+  function enableSwipe(id){
+    const carousel = document.querySelector(`.carousel[data-carousel-id="${id}"]`);
+    if(!carousel) return;
+
+    let startX = 0;
+    let endX = 0;
+
+    carousel.addEventListener("touchstart", (e) => {
+      startX = e.changedTouches[0].screenX;
+    }, {passive:true});
+
+    carousel.addEventListener("touchend", (e) => {
+      endX = e.changedTouches[0].screenX;
+      const dx = endX - startX;
+      if(Math.abs(dx) < 40) return;
+
+      carousels[id].index += (dx < 0 ? 1 : -1);
+      updateCarousel(id);
+    }, {passive:true});
+  }
+
+  enableSwipe("docs");
+  enableSwipe("retain");
+</script>
+
 </body>
 </html>
