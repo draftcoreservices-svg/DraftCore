@@ -347,6 +347,169 @@
     li{margin: 6px 0}
 
     /* Pricing */
+/* Carousel pricing */
+.carousel-block{
+  border-radius: var(--radius2);
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.carousel-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 14px;
+}
+
+.carousel-controls{
+  display:flex;
+  gap: 8px;
+  align-items:center;
+}
+
+.cbtn{
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(11,11,15,0.14);
+  background: rgba(11,11,15,0.02);
+  cursor:pointer;
+  font-weight:900;
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.cbtn:hover{
+  transform: translateY(-1px);
+  background: rgba(11,11,15,0.04);
+  border-color: rgba(11,11,15,0.22);
+}
+
+.carousel{
+  margin-top: 14px;
+  overflow:hidden;
+  border-radius: var(--radius2);
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+}
+
+.track{
+  display:flex;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.slide{
+  min-width: 100%;
+  padding: 18px;
+}
+
+@media (min-width: 920px){
+  .slide{ padding: 20px 22px; }
+}
+
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(11,11,15,0.12);
+  background: rgba(11,11,15,0.02);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.subtag{
+  margin-top: 10px;
+  color: rgba(75,75,85,0.9);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.ptable{
+  margin-top: 14px;
+  display:grid;
+  gap: 10px;
+}
+
+.prow{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(11,11,15,0.10);
+  background: rgba(11,11,15,0.02);
+}
+
+.pname{
+  font-size: 13.5px;
+  color: rgba(11,11,15,0.92);
+  line-height: 1.5;
+}
+
+.pprice{
+  font-size: 13.5px;
+  font-weight: 800;
+  color: rgba(11,11,15,0.92);
+  white-space: nowrap;
+}
+
+.carousel-note{
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+
+.pricebig{
+  margin-top: 12px;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+}
+.pricebig span{
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.bullets{
+  margin-top: 14px;
+  display:grid;
+  gap: 10px;
+}
+
+.bitem{
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(11,11,15,0.10);
+  background: rgba(11,11,15,0.02);
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.pricing-foot{
+  border-radius: var(--radius2);
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.pricing-disclaimer{
+  margin:0;
+  color: rgba(75,75,85,0.9);
+  font-size: 12.5px;
+  line-height: 1.75;
+}
+
+    
     .pricing{
       margin-top: 14px;
       display:grid;
@@ -599,43 +762,164 @@
       </div>
     </section>
 
-    <span id="pricing" class="anchor"></span>
-    <section class="section">
-      <h2>Pricing</h2>
-      <p>Designed for predictable spend. Retainers available for firms who want ongoing capacity.</p>
+   <span id="pricing" class="anchor"></span>
+<section class="section">
+  <h2>Pricing</h2>
+  <p>Clear anchor pricing for individual documents, plus retainers for predictable ongoing capacity.</p>
 
-      <div class="pricing">
-        <div class="price-card feature">
-          <span class="tag">Most popular for firms</span>
-          <div class="price">
-            <strong>Retainers</strong>
-            <span>from £400–£600 / month</span>
-          </div>
-          <ul>
-            <li>Priority turnaround</li>
-            <li>Agreed volume of first drafts / revisions</li>
-            <li>Overflow capacity without hiring</li>
-            <li>Clear drafting-only boundaries</li>
-          </ul>
-          <p class="note">
-            Exact pricing depends on document types and expected monthly volume. Email for a simple retainer menu.
+  <div class="pricing-shell" style="margin-top:14px; display:grid; gap:14px;">
+
+    <!-- INDIVIDUAL DOCS CAROUSEL -->
+    <div class="carousel-block">
+      <div class="carousel-head">
+        <div>
+          <h3 style="margin:0; font-size:14px; text-transform:uppercase; letter-spacing:0.2px; color: rgba(11,11,15,0.78);">
+            Pay-per-document (anchor prices)
+          </h3>
+          <p style="margin:6px 0 0; color: var(--muted); font-size:14px; line-height:1.7;">
+            Market-sensible, confident ranges. All prices confirmed after a brief scope review.
           </p>
         </div>
 
-        <div class="price-card">
-          <span class="tag">Guide pricing (typical)</span>
-          <ul>
-            <li><strong>NDA:</strong> £60–£120</li>
-            <li><strong>Service/Consultancy:</strong> £120–£250</li>
-            <li><strong>Amendments/Addenda:</strong> £80–£180</li>
-            <li><strong>Clean-up/Restructure:</strong> £80–£200</li>
-          </ul>
-          <p class="note">
-            Pricing is confirmed after a brief review of scope and complexity. Drafting support only — not legal advice.
-          </p>
+        <div class="carousel-controls">
+          <button class="cbtn" type="button" aria-label="Previous" data-carousel="docs" data-dir="prev">‹</button>
+          <button class="cbtn" type="button" aria-label="Next" data-carousel="docs" data-dir="next">›</button>
         </div>
       </div>
-    </section>
+
+      <div class="carousel" data-carousel-id="docs">
+        <div class="track">
+
+          <article class="slide">
+            <div class="tag">Short / standard documents</div>
+            <div class="subtag">(1–3 hours solicitor time saved)</div>
+
+            <div class="ptable">
+              <div class="prow"><div class="pname">NDA (1-way / mutual)</div><div class="pprice">£50–£90</div></div>
+              <div class="prow"><div class="pname">Simple consultancy agreement</div><div class="pprice">£80–£130</div></div>
+              <div class="prow"><div class="pname">Contractor agreement</div><div class="pprice">£80–£140</div></div>
+              <div class="prow"><div class="pname">Basic service agreement</div><div class="pprice">£100–£160</div></div>
+              <div class="prow"><div class="pname">Amendment / variation agreement</div><div class="pprice">£50–£80</div></div>
+              <div class="prow"><div class="pname">Deed of assignment (simple)</div><div class="pprice">£70–£120</div></div>
+            </div>
+
+            <p class="carousel-note">Ideal for fast turnaround first drafts and clean, consistent formatting.</p>
+          </article>
+
+          <article class="slide">
+            <div class="tag">Medium complexity documents</div>
+            <div class="subtag">(3–6 hours solicitor time saved)</div>
+
+            <div class="ptable">
+              <div class="prow"><div class="pname">Share transfer form + board minutes</div><div class="pprice">£100–£180</div></div>
+              <div class="prow"><div class="pname">Shareholders’ resolutions (routine)</div><div class="pprice">£80–£160</div></div>
+              <div class="prow"><div class="pname">Commercial licence agreement</div><div class="pprice">£120–£220</div></div>
+              <div class="prow"><div class="pname">Settlement agreement (non-employment)</div><div class="pprice">£130–£250</div></div>
+              <div class="prow"><div class="pname">Heads of terms</div><div class="pprice">£120–£180</div></div>
+            </div>
+
+            <p class="carousel-note">Best for repeat work where structure and clause flow matter.</p>
+          </article>
+
+          <article class="slide">
+            <div class="tag">Longer / heavier documents</div>
+            <div class="subtag">(6–10+ hours saved)</div>
+
+            <div class="ptable">
+              <div class="prow"><div class="pname">Commercial lease (first draft)</div><div class="pprice">£200–£400</div></div>
+              <div class="prow"><div class="pname">Framework / master services agreement</div><div class="pprice">£220–£450</div></div>
+              <div class="prow"><div class="pname">Bespoke commercial agreement</div><div class="pprice">£250–£600</div></div>
+              <div class="prow"><div class="pname">Document pack (multiple linked docs)</div><div class="pprice">£Dependant on pack size</div></div>
+            </div>
+
+            <p class="carousel-note">For heavier drafting, pack work, and agreements with multiple moving parts.</p>
+          </article>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- RETAINERS CAROUSEL -->
+    <div class="carousel-block">
+      <div class="carousel-head">
+        <div>
+          <h3 style="margin:0; font-size:14px; text-transform:uppercase; letter-spacing:0.2px; color: rgba(11,11,15,0.78);">
+            Retainers
+          </h3>
+          <p style="margin:6px 0 0; color: var(--muted); font-size:14px; line-height:1.7;">
+            Predictable monthly capacity for firms who want reliable drafting support.
+          </p>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="cbtn" type="button" aria-label="Previous" data-carousel="retain" data-dir="prev">‹</button>
+          <button class="cbtn" type="button" aria-label="Next" data-carousel="retain" data-dir="next">›</button>
+        </div>
+      </div>
+
+      <div class="carousel" data-carousel-id="retain">
+        <div class="track">
+
+          <article class="slide">
+            <div class="tag">Starter Retainer</div>
+            <div class="pricebig">£250 <span>/ month</span></div>
+            <div class="subtag">Best for solos & tiny firms.</div>
+
+            <div class="bullets">
+              <div class="bitem">Includes <strong>5 short documents</strong></div>
+              <div class="bitem">Plus <strong>3 medium documents</strong></div>
+              <div class="bitem"><strong>Priority turnaround</strong> (48 hrs)</div>
+              <div class="bitem"><strong>Email support</strong></div>
+              <div class="bitem">Extra docs: <strong>–15%</strong> off standard rate</div>
+            </div>
+          </article>
+
+          <article class="slide">
+            <div class="tag">Core Retainer</div>
+            <div class="pricebig">£500 <span>/ month</span></div>
+            <div class="subtag"><strong>Your sweet spot.</strong> Default recommendation.</div>
+
+            <div class="bullets">
+              <div class="bitem">Includes <strong>8 short docs</strong></div>
+              <div class="bitem">And <strong>5 medium docs</strong></div>
+              <div class="bitem">And <strong>3 long docs</strong></div>
+              <div class="bitem"><strong>Light revisions</strong> included</div>
+              <div class="bitem"><strong>24–48 hr</strong> turnaround</div>
+              <div class="bitem">Extra docs: <strong>–25%</strong> off</div>
+            </div>
+          </article>
+
+          <article class="slide">
+            <div class="tag">Heavy Use Retainer</div>
+            <div class="pricebig">£900–£1,200 <span>/ month</span></div>
+            <div class="subtag">For small commercial teams.</div>
+
+            <div class="bullets">
+              <div class="bitem">Includes <strong>15 short docs</strong></div>
+              <div class="bitem">And <strong>10 medium docs</strong></div>
+              <div class="bitem">And <strong>5 long docs</strong></div>
+              <div class="bitem"><strong>Same-day drafts</strong> (when possible)</div>
+              <div class="bitem"><strong>WhatsApp + email support</strong></div>
+              <div class="bitem">Extra docs: <strong>–30%</strong> off</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-foot">
+      <div class="pricing-foot-inner">
+        <p class="pricing-disclaimer">
+          DraftCore provides drafting and preparatory support only. We do not provide legal advice, legal representation, or regulated legal services.
+          All documents should be reviewed by a qualified solicitor prior to use.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <span id="faq" class="anchor"></span>
     <section class="section">
