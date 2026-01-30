@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DraftCore — Legal Drafting Support</title>
-  <meta name="description" content="DraftCore provides discreet first-draft and preparatory legal document drafting support for solicitors, firms, and private individuals." />
-
+  <meta
+    name="description"
+    content="DraftCore provides discreet first-draft and preparatory legal document drafting support for solicitors, firms, and private individuals."
+  />
   <style>
     :root{
       --bg:#ffffff;
@@ -13,22 +15,16 @@
       --muted:#4b4b55;
       --line:#e8e8ef;
       --panel:#fafafc;
-
-      --gold:#c9a227;
-      --gold2:#f2d27b;
+      --gold:#c9a227; /* classy gold */
       --shadow: 0 18px 60px rgba(11,11,15,0.08);
       --shadow2: 0 10px 30px rgba(11,11,15,0.08);
-
       --radius: 18px;
       --radius2: 22px;
       --max: 1120px;
-
-      --navH: 78px;
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
-    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -43,34 +39,35 @@
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding: 26px 18px 80px}
 
-    /* accessibility / reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
-      *{transition:none !important; animation:none !important}
-    }
-
     /* Top bar */
     .topbar{
-      position:sticky; top:0; z-index:50;
+      position:sticky;
+      top:0;
+      z-index:50;
       background: rgba(255,255,255,0.86);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
     .topbar-inner{
-      max-width:var(--max); margin:0 auto;
+      max-width:var(--max);
+      margin:0 auto;
       padding: 14px 18px;
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
     }
-
     .brand{
-      display:flex; align-items:center; gap:12px;
+      display:flex;
+      align-items:center;
+      gap:12px;
       text-decoration:none;
       user-select:none;
       min-width: 220px;
     }
-
     .logo{
-      width:40px; height:40px; border-radius: 14px;
+      width:40px; height:40px;
+      border-radius: 14px;
       background: #0b0b0f;
       display:grid; place-items:center;
       box-shadow: var(--shadow2);
@@ -80,18 +77,21 @@
     }
     .logo:after{
       content:"";
-      position:absolute; inset:-40%;
+      position:absolute;
+      inset:-40%;
       background: radial-gradient(circle at 30% 30%, rgba(201,162,39,0.9), transparent 45%);
       opacity:0.65;
     }
     .logo svg{position:relative; z-index:1}
-
     .brand strong{font-size:16px; letter-spacing:0.2px}
     .brand span{display:block; font-size:12px; color:var(--muted); margin-top:1px}
 
     .nav{
-      display:flex; align-items:center; gap:10px;
+      display:flex;
+      align-items:center;
+      gap:10px;
       flex-wrap:wrap;
+      justify-content:flex-end;
     }
     .nav a{
       text-decoration:none;
@@ -107,14 +107,17 @@
       background: rgba(11,11,15,0.03);
     }
 
-    /* Primary button only */
+    /* Single CTA (hero only) */
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
       padding: 12px 14px;
       border-radius: 999px;
       border: 1px solid rgba(11,11,15,0.14);
       text-decoration:none;
-      font-weight:700;
+      font-weight:800;
       font-size:13px;
       letter-spacing:0.2px;
       white-space:nowrap;
@@ -130,7 +133,8 @@
     }
     .btn.primary:before{
       content:"";
-      position:absolute; inset:-80%;
+      position:absolute;
+      inset:-80%;
       background: radial-gradient(circle at 30% 30%, rgba(201,162,39,0.9), transparent 40%);
       opacity:0.65;
       transform: rotate(12deg);
@@ -155,7 +159,6 @@
     @media (max-width: 920px){
       .hero{grid-template-columns:1fr; padding-top: 32px}
     }
-
     .hero-left{
       border: 1px solid var(--line);
       border-radius: var(--radius2);
@@ -167,7 +170,8 @@
     }
     .hero-left:before{
       content:"";
-      position:absolute; inset:-2px;
+      position:absolute;
+      inset:-2px;
       background:
         radial-gradient(560px 300px at 18% 12%, rgba(201,162,39,0.14), transparent 60%),
         radial-gradient(600px 360px at 85% 25%, rgba(11,11,15,0.06), transparent 60%);
@@ -176,7 +180,9 @@
     .hero-left > *{position:relative}
 
     .kicker{
-      display:inline-flex; align-items:center; gap:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
       padding: 8px 12px;
       border-radius:999px;
       border:1px solid rgba(11,11,15,0.10);
@@ -185,7 +191,8 @@
       color: var(--muted);
     }
     .dot{
-      width:8px; height:8px; border-radius:999px;
+      width:8px; height:8px;
+      border-radius:999px;
       background: var(--gold);
       box-shadow: 0 0 0 4px rgba(201,162,39,0.14);
     }
@@ -196,9 +203,8 @@
       line-height: 1.06;
       letter-spacing: -0.9px;
     }
-    @media (max-width:520px){
-      h1{font-size:34px}
-    }
+    @media (max-width:520px){ h1{font-size:34px} }
+
     .lead{
       margin: 0 0 18px;
       color: var(--muted);
@@ -208,11 +214,11 @@
     }
 
     .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px}
-    .mini{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px;
-    }
+    .mini{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px; }
     .pill{
-      display:inline-flex; gap:8px; align-items:center;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
       padding: 8px 10px;
       border-radius: 999px;
       border:1px solid rgba(11,11,15,0.10);
@@ -227,12 +233,7 @@
       line-height:1.6;
     }
 
-    .hero-right{
-      display:flex;
-      flex-direction:column;
-      gap: 12px;
-    }
-
+    .hero-right{ display:flex; flex-direction:column; gap: 12px; }
     .box{
       border-radius: var(--radius2);
       border:1px solid var(--line);
@@ -253,12 +254,7 @@
       font-size: 14px;
       line-height: 1.7;
     }
-    .statgrid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      margin-top: 12px;
-    }
+    .statgrid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top: 12px; }
     .stat{
       border-radius: 16px;
       border:1px solid rgba(11,11,15,0.10);
@@ -277,17 +273,8 @@
       background: #fff;
       box-shadow: var(--shadow);
     }
-    .section h2{
-      margin: 0 0 8px;
-      font-size: 20px;
-      letter-spacing:-0.2px;
-    }
-    .section p{
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 14.5px;
-    }
+    .section h2{ margin: 0 0 8px; font-size: 20px; letter-spacing:-0.2px; }
+    .section p{ margin: 0; color: var(--muted); line-height: 1.8; font-size: 14.5px; }
 
     .grid3{
       margin-top: 14px;
@@ -303,16 +290,9 @@
       background: linear-gradient(180deg, #fff 0%, #fbfbfd 100%);
       padding: 16px;
     }
-    .card h3{
-      margin: 8px 0 6px;
-      font-size: 15px;
-    }
-    .card p{
-      margin: 0;
-      color: rgba(75,75,85,0.92);
-      font-size: 13.5px;
-      line-height:1.7;
-    }
+    .card h3{ margin: 8px 0 6px; font-size: 15px; }
+    .card p{ margin: 0; color: rgba(75,75,85,0.92); font-size: 13.5px; line-height:1.7; }
+
     .icon{
       width:34px; height:34px;
       border-radius: 12px;
@@ -325,7 +305,8 @@
     }
     .icon:after{
       content:"";
-      position:absolute; inset:-60%;
+      position:absolute;
+      inset:-60%;
       background: radial-gradient(circle at 30% 30%, rgba(201,162,39,0.9), transparent 45%);
       opacity:0.6;
     }
@@ -355,12 +336,7 @@
     ul{margin:0; padding-left: 18px; color: var(--muted); line-height:1.85}
     li{margin: 6px 0}
 
-    /* anchors */
-    .anchor{
-      scroll-margin-top: var(--navH);
-    }
-
-    /* Pricing carousels */
+    /* Pricing / carousel */
     .carousel-block{
       border-radius: var(--radius2);
       border: 1px solid var(--line);
@@ -368,23 +344,15 @@
       box-shadow: var(--shadow);
       padding: 18px;
     }
-
     .carousel-head{
       display:flex;
       align-items:flex-start;
       justify-content:space-between;
       gap: 14px;
     }
-
-    .carousel-controls{
-      display:flex;
-      gap: 8px;
-      align-items:center;
-    }
-
+    .carousel-controls{ display:flex; gap: 8px; align-items:center; }
     .cbtn{
-      width: 42px;
-      height: 42px;
+      width: 42px; height: 42px;
       border-radius: 999px;
       border: 1px solid rgba(11,11,15,0.14);
       background: rgba(11,11,15,0.02);
@@ -399,7 +367,6 @@
       background: rgba(11,11,15,0.04);
       border-color: rgba(11,11,15,0.22);
     }
-
     .carousel{
       margin-top: 14px;
       overflow:hidden;
@@ -407,21 +374,9 @@
       border: 1px solid var(--line);
       background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
     }
-
-    .track{
-      display:flex;
-      transition: transform 0.35s ease;
-      will-change: transform;
-    }
-
-    .slide{
-      min-width: 100%;
-      padding: 18px;
-    }
-
-    @media (min-width: 920px){
-      .slide{ padding: 20px 22px; }
-    }
+    .track{ display:flex; transition: transform 0.35s ease; will-change: transform; }
+    .slide{ min-width: 100%; padding: 18px; }
+    @media (min-width: 920px){ .slide{ padding: 20px 22px; } }
 
     .tag{
       display:inline-flex;
@@ -434,20 +389,9 @@
       font-size: 12px;
       color: var(--muted);
     }
+    .subtag{ margin-top: 10px; color: rgba(75,75,85,0.9); font-size: 13px; line-height: 1.65; }
 
-    .subtag{
-      margin-top: 10px;
-      color: rgba(75,75,85,0.9);
-      font-size: 13px;
-      line-height: 1.65;
-    }
-
-    .ptable{
-      margin-top: 14px;
-      display:grid;
-      gap: 10px;
-    }
-
+    .ptable{ margin-top: 14px; display:grid; gap: 10px; }
     .prow{
       display:flex;
       align-items:flex-start;
@@ -458,45 +402,15 @@
       border: 1px solid rgba(11,11,15,0.10);
       background: rgba(11,11,15,0.02);
     }
+    .pname{ font-size: 13.5px; color: rgba(11,11,15,0.92); line-height: 1.5; }
+    .pprice{ font-size: 13.5px; font-weight: 900; color: rgba(11,11,15,0.92); white-space: nowrap; }
 
-    .pname{
-      font-size: 13.5px;
-      color: rgba(11,11,15,0.92);
-      line-height: 1.5;
-    }
+    .carousel-note{ margin: 14px 0 0; color: var(--muted); font-size: 13.5px; line-height: 1.75; }
 
-    .pprice{
-      font-size: 13.5px;
-      font-weight: 800;
-      color: rgba(11,11,15,0.92);
-      white-space: nowrap;
-    }
+    .pricebig{ margin-top: 12px; font-size: 30px; font-weight: 900; letter-spacing: -0.4px; }
+    .pricebig span{ font-size: 13px; color: var(--muted); font-weight: 800; }
 
-    .carousel-note{
-      margin: 14px 0 0;
-      color: var(--muted);
-      font-size: 13.5px;
-      line-height: 1.75;
-    }
-
-    .pricebig{
-      margin-top: 12px;
-      font-size: 30px;
-      font-weight: 900;
-      letter-spacing: -0.4px;
-    }
-    .pricebig span{
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .bullets{
-      margin-top: 14px;
-      display:grid;
-      gap: 10px;
-    }
-
+    .bullets{ margin-top: 14px; display:grid; gap: 10px; }
     .bitem{
       padding: 10px 12px;
       border-radius: 14px;
@@ -514,7 +428,6 @@
       box-shadow: var(--shadow);
       padding: 18px;
     }
-
     .pricing-disclaimer{
       margin:0;
       color: rgba(75,75,85,0.9);
@@ -522,82 +435,43 @@
       line-height: 1.75;
     }
 
-    /* Trust blocks */
-    .callout{
-      border-radius: var(--radius2);
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
-      box-shadow: var(--shadow);
-      padding: 18px;
-      margin-top: 14px;
-      position:relative;
-      overflow:hidden;
-    }
-    .callout:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(520px 240px at 18% 15%, rgba(201,162,39,0.12), transparent 62%),
-        radial-gradient(520px 240px at 85% 30%, rgba(11,11,15,0.05), transparent 62%);
-      pointer-events:none;
-    }
-    .callout > *{position:relative}
-    .callout h3{
-      margin:0 0 8px;
-      font-size:14px;
-      text-transform: uppercase;
-      letter-spacing:0.2px;
-      color: rgba(11,11,15,0.78);
-    }
-    .callout p{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
     /* Testimonials */
     .tgrid{
-      margin-top:14px;
+      margin-top: 14px;
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 12px;
     }
     @media (max-width: 920px){ .tgrid{grid-template-columns:1fr} }
-
     .tcard{
       border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: #fff;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, #fff 0%, #fbfbfd 100%);
       padding: 16px;
-      box-shadow: var(--shadow2);
     }
     .tmeta{
       display:flex;
       align-items:flex-start;
       justify-content:space-between;
-      gap: 10px;
-      margin-bottom: 10px;
+      gap:10px;
+      margin-bottom:8px;
     }
-    .tmeta strong{
-      display:block;
-      font-size: 13.5px;
-      line-height: 1.35;
-    }
-    .trate{
-      font-size: 12.5px;
+    .tmeta strong{font-size:13.5px}
+    .rating{
+      font-size:12px;
       color: rgba(75,75,85,0.92);
-      white-space:nowrap;
       border:1px solid rgba(11,11,15,0.10);
       background: rgba(11,11,15,0.02);
-      padding: 6px 10px;
-      border-radius: 999px;
+      padding:6px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+      font-weight:800;
     }
     .tcard p{
       margin:0;
-      color: var(--muted);
+      color: rgba(75,75,85,0.92);
       font-size: 13.5px;
-      line-height: 1.8;
+      line-height: 1.75;
     }
 
     /* FAQ */
@@ -610,7 +484,7 @@
     details + details{margin-top:10px}
     summary{
       cursor:pointer;
-      font-weight:800;
+      font-weight:900;
       font-size:13.5px;
       color: var(--text);
       list-style:none;
@@ -627,6 +501,21 @@
       border-top: 1px solid var(--line);
       padding-top: 18px;
     }
+
+    /* helpers */
+    .anchor{position:relative; top:-90px; visibility:hidden}
+    .emailline{
+      margin-top:10px;
+      font-size:13.5px;
+      color: rgba(75,75,85,0.92);
+      line-height:1.7;
+    }
+    .emailline a{
+      text-decoration:none;
+      border-bottom: 1px solid rgba(201,162,39,0.55);
+      padding-bottom:2px;
+    }
+    .emailline a:hover{ color: var(--text); }
   </style>
 </head>
 
@@ -647,18 +536,11 @@
       </a>
 
       <div class="nav">
-        <a href="#services" class="anchor">Services</a>
-        <a href="#process" class="anchor">Process</a>
-        <a href="#pricing" class="anchor">Pricing</a>
-        <a href="#trust" class="anchor">Trust</a>
-        <a href="#testimonials" class="anchor">Testimonials</a>
-        <a href="#faq" class="anchor">FAQs</a>
-
-        <a class="btn primary"
-           href="mailto:hello@draftcore.co.uk?subject=DraftCore%20—%20Drafting%20Support%20Enquiry&body=Hi%20DraftCore%2C%0A%0AI%27d%20like%20drafting%20support%20for%20%5Bdocument%20type%5D.%0A%0AContext%3A%20%5Bbrief%5D%0ATimeline%3A%20%5Bstandard%2048%E2%80%9372h%20%2F%2024h%20%2F%2012h%5D%0AAny%20existing%20draft%2Fprecedent%3A%20%5Byes%2Fno%5D%0APreferred%20format%3A%20%5BWord%2FPDF%5D%0A%0AThanks%2C">
-          <span>Get a quote</span>
-          <svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M10 7h7v7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQs</a>
       </div>
     </div>
   </div>
@@ -667,26 +549,38 @@
     <section class="hero">
       <div class="hero-left">
         <div class="kicker"><span class="dot"></span> Discreet overflow drafting support for busy legal teams</div>
+
         <h1>Minimal fuss. Clean drafting. Fast delivery.</h1>
+
         <p class="lead">
-          DraftCore provides <strong>first-draft and preparatory legal document drafting</strong> support for solicitors and firms.
-          Professional structure, sensible clause flow, and consistent formatting — with clear boundaries: <strong>drafting support only</strong>.
+          DraftCore provides <strong>first-draft and preparatory legal document drafting</strong> support for
+          <strong>junior fee earners and teams under pressure</strong> — when there’s no time to draft, but standards still matter.
+          Professional structure, sensible clause flow, and consistent formatting — with clear boundaries:
+          <strong>drafting support only</strong>.
         </p>
 
+        <!-- ONE CTA (hero only) -->
         <div class="hero-cta">
-          <a class="btn primary"
-             href="mailto:hello@draftcore.co.uk?subject=DraftCore%20—%20Drafting%20Support%20Enquiry&body=Hi%20DraftCore%2C%0A%0AI%27d%20like%20drafting%20support%20for%20%5Bdocument%20type%5D.%0A%0AContext%3A%20%5Bbrief%5D%0ATimeline%3A%20%5Bstandard%2048%E2%80%9372h%20%2F%2024h%20%2F%2012h%5D%0AAny%20existing%20draft%2Fprecedent%3A%20%5Byes%2Fno%5D%0APreferred%20format%3A%20%5BWord%2FPDF%5D%0A%0AThanks%2C">
+          <a class="btn primary" href="mailto:hello@draftcore.co.uk?subject=DraftCore%20—%20Drafting%20Support%20Enquiry">
             <span>Get a quote</span>
-            <svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M10 7h7v7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 17 17 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M10 7h7v7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </a>
         </div>
 
         <div class="mini">
           <span class="pill">UK-based</span>
-          <span class="pill">Confidential handling</span>
+          <span class="pill">Email-only</span>
           <span class="pill">Typical turnaround 48–72h</span>
+          <span class="pill">1 light revision included (ad-hoc)</span>
           <span class="pill">Solicitor review recommended</span>
         </div>
+
+        <p class="emailline">
+          Prefer to just reply? Email <a href="mailto:hello@draftcore.co.uk">hello@draftcore.co.uk</a> with the document type, brief context, and deadline.
+        </p>
 
         <p class="fine">
           DraftCore provides drafting support only (no legal advice / representation). All documents should be reviewed by a qualified solicitor prior to use.
@@ -695,11 +589,11 @@
 
       <div class="hero-right">
         <div class="box">
-          <h3>Boundaries-first service model</h3>
+          <h3>Built for overflow & speed</h3>
           <div class="statgrid">
-            <div class="stat"><strong>48–72h</strong><span>Typical turnaround</span></div>
+            <div class="stat"><strong>48–72h</strong><span>Standard turnaround</span></div>
             <div class="stat"><strong>Draft-ready</strong><span>Clean clause flow</span></div>
-            <div class="stat"><strong>Flexible</strong><span>Per-doc or retainer</span></div>
+            <div class="stat"><strong>Email-only</strong><span>Simple process</span></div>
             <div class="stat"><strong>Discreet</strong><span>Confidential handling</span></div>
           </div>
         </div>
@@ -707,17 +601,25 @@
         <div class="box">
           <h3>What you receive</h3>
           <p>
-            A polished first draft or clean revision aligned to the context you provide — with sensible structure, definitions, commercial logic, and consistent formatting.
-            <br /><br />
-            <strong>Revisions:</strong> 1 light revision included on ad-hoc documents. 2 light revisions included on retainer work.
+            A polished first draft or clean revision aligned to the context you provide — with sensible structure,
+            definitions, commercial logic, and consistent formatting (ready for your solicitor to review and finalise).
+          </p>
+        </div>
+
+        <div class="box">
+          <h3>Confidential by default</h3>
+          <p>
+            Samples available on request. Data handled discreetly and deleted within 21 days of job completion,
+            unless retention is required for legal, regulatory, or accounting purposes.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="services" class="section anchor">
+    <span id="services" class="anchor"></span>
+    <section class="section">
       <h2>Services</h2>
-      <p>Focused, practical drafting support — kept deliberately tight to stay fast, safe, and useful.</p>
+      <p>Focused, practical drafting support — deliberately tight to stay fast, safe, and useful.</p>
 
       <div class="grid3">
         <div class="card">
@@ -761,15 +663,16 @@
         <div class="list">
           <h3>Who we work with</h3>
           <ul>
-            <li><strong>Law firms:</strong> overflow drafting capacity, short deadlines, partner time protection</li>
-            <li><strong>Busy fee-earners:</strong> outsource first drafts, keep review and sign-off in-house</li>
-            <li><strong>Private individuals:</strong> straightforward commercial documents (non-contentious)</li>
+            <li><strong>Law firms:</strong> overflow drafting capacity, short deadlines, protecting senior time</li>
+            <li><strong>Junior fee earners:</strong> when you need the first draft done cleanly so you can keep matters moving</li>
+            <li><strong>In-house / founders / individuals:</strong> straightforward commercial documents (non-contentious)</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="process" class="section anchor">
+    <span id="process" class="anchor"></span>
+    <section class="section">
       <h2>Process</h2>
       <p>Simple, discreet, and designed to keep your workflow moving.</p>
 
@@ -787,7 +690,7 @@
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z" stroke="white" stroke-opacity="0.8" stroke-width="1.6"/></svg>
           </div>
           <h3>2) Confirm scope & timeline</h3>
-          <p>You get a clear price and turnaround. Typical first drafts are <strong>48–72 hours</strong> depending on complexity.</p>
+          <p>We reply by email with a clear quote and turnaround. Standard turnaround is 48–72 hours.</p>
         </div>
 
         <div class="card">
@@ -795,29 +698,18 @@
             <svg viewBox="0 0 24 24" fill="none"><path d="m7 12 3 3 7-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>3) Receive the draft</h3>
-          <p>Delivered as a clean, professionally formatted document. Solicitor review recommended prior to use.</p>
+          <p>Delivered as a clean, professionally formatted document. Your solicitor reviews, advises, and finalises as normal.</p>
         </div>
-      </div>
-
-      <div class="callout">
-        <h3>Urgent turnaround</h3>
-        <p>
-          Standard delivery is <strong>48–72 hours</strong>. If you need a faster turnaround, urgent slots are available for an additional fee:
-          <br /><br />
-          <strong>24 hours:</strong> +£35 (short) / +£60 (medium) / +£120 (long)<br />
-          <strong>12 hours:</strong> +£60 (short) / +£110 (medium) / +£220 (long)
-          <br /><br />
-          Urgent delivery is subject to capacity and confirmation at the point of instruction.
-        </p>
       </div>
     </section>
 
-    <section id="pricing" class="section anchor">
+    <span id="pricing" class="anchor"></span>
+    <section class="section">
       <h2>Pricing</h2>
-      <p>Clear anchor pricing for individual documents, plus retainers for predictable ongoing capacity.</p>
+      <p>Clear anchor pricing for individual documents, plus retainers for predictable monthly capacity.</p>
 
       <div class="pricing-shell" style="margin-top:14px; display:grid; gap:14px;">
-
+        <!-- INDIVIDUAL DOCS CAROUSEL -->
         <div class="carousel-block">
           <div class="carousel-head">
             <div>
@@ -825,10 +717,9 @@
                 Pay-per-document (anchor prices)
               </h3>
               <p style="margin:6px 0 0; color: var(--muted); font-size:14px; line-height:1.7;">
-                Market-sensible, confident ranges. All prices confirmed after a brief scope review. Includes <strong>1 light revision</strong>.
+                Market-sensible ranges. Final price confirmed after a brief scope review. Includes <strong>1 light revision</strong>.
               </p>
             </div>
-
             <div class="carousel-controls">
               <button class="cbtn" type="button" aria-label="Previous" data-carousel="docs" data-dir="prev">‹</button>
               <button class="cbtn" type="button" aria-label="Next" data-carousel="docs" data-dir="next">›</button>
@@ -837,10 +728,9 @@
 
           <div class="carousel" data-carousel-id="docs">
             <div class="track">
-
               <article class="slide">
                 <div class="tag">Short / standard documents</div>
-                <div class="subtag">(typically 1–3 hours solicitor time saved)</div>
+                <div class="subtag">(1–3 hours solicitor time saved)</div>
 
                 <div class="ptable">
                   <div class="prow"><div class="pname">NDA (1-way / mutual)</div><div class="pprice">£50–£90</div></div>
@@ -851,12 +741,14 @@
                   <div class="prow"><div class="pname">Deed of assignment (simple)</div><div class="pprice">£70–£120</div></div>
                 </div>
 
-                <p class="carousel-note">Ideal for fast turnaround first drafts and clean, consistent formatting.</p>
+                <p class="carousel-note">
+                  Standard turnaround: <strong>48–72h</strong>. Faster turnaround available (fees below).
+                </p>
               </article>
 
               <article class="slide">
                 <div class="tag">Medium complexity documents</div>
-                <div class="subtag">(typically 3–6 hours solicitor time saved)</div>
+                <div class="subtag">(3–6 hours solicitor time saved)</div>
 
                 <div class="ptable">
                   <div class="prow"><div class="pname">Share transfer form + board minutes</div><div class="pprice">£100–£180</div></div>
@@ -866,12 +758,14 @@
                   <div class="prow"><div class="pname">Heads of terms</div><div class="pprice">£120–£180</div></div>
                 </div>
 
-                <p class="carousel-note">Best for repeat work where structure and clause flow matter.</p>
+                <p class="carousel-note">
+                  Includes <strong>1 light revision</strong>. Standard turnaround: <strong>48–72h</strong>.
+                </p>
               </article>
 
               <article class="slide">
                 <div class="tag">Longer / heavier documents</div>
-                <div class="subtag">(typically 6–10+ hours saved)</div>
+                <div class="subtag">(6–10+ hours saved)</div>
 
                 <div class="ptable">
                   <div class="prow"><div class="pname">Commercial lease (first draft)</div><div class="pprice">£200–£400</div></div>
@@ -880,24 +774,62 @@
                   <div class="prow"><div class="pname">Document pack (multiple linked docs)</div><div class="pprice">£Dependant on pack size</div></div>
                 </div>
 
-                <p class="carousel-note">For heavier drafting, pack work, and agreements with multiple moving parts.</p>
+                <p class="carousel-note">
+                  Includes <strong>1 light revision</strong>. Standard turnaround: <strong>48–72h</strong>.
+                </p>
               </article>
-
             </div>
           </div>
         </div>
 
+        <!-- FAST TURNAROUND FEES -->
         <div class="carousel-block">
           <div class="carousel-head">
             <div>
               <h3 style="margin:0; font-size:14px; text-transform:uppercase; letter-spacing:0.2px; color: rgba(11,11,15,0.78);">
-                Retainers
+                Faster turnaround (optional)
+              </h3>
+              <p style="margin:6px 0 0; color: var(--muted); font-size:14px; line-height:1.7;">
+                Standard is 48–72h. If you need it sooner, expedited fees apply (subject to availability).
+              </p>
+            </div>
+          </div>
+
+          <div class="two-col" style="margin-top:14px;">
+            <div class="list">
+              <h3>24-hour turnaround fee</h3>
+              <ul>
+                <li><strong>Short:</strong> +£35</li>
+                <li><strong>Medium:</strong> +£60</li>
+                <li><strong>Long:</strong> +£120</li>
+              </ul>
+            </div>
+            <div class="list">
+              <h3>12-hour turnaround fee</h3>
+              <ul>
+                <li><strong>Short:</strong> +£60</li>
+                <li><strong>Medium:</strong> +£100</li>
+                <li><strong>Long:</strong> +£200</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="carousel-note" style="margin-top:14px;">
+            Expedited delivery is confirmed by email once scope is agreed. Retainers receive priority scheduling.
+          </p>
+        </div>
+
+        <!-- RETAINERS CAROUSEL -->
+        <div class="carousel-block">
+          <div class="carousel-head">
+            <div>
+              <h3 style="margin:0; font-size:14px; text-transform:uppercase; letter-spacing:0.2px; color: rgba(11,11,15,0.78);">
+                Retainers (best value)
               </h3>
               <p style="margin:6px 0 0; color: var(--muted); font-size:14px; line-height:1.7;">
                 Predictable monthly capacity for firms who want reliable drafting support. Includes <strong>2 light revisions</strong> per document.
               </p>
             </div>
-
             <div class="carousel-controls">
               <button class="cbtn" type="button" aria-label="Previous" data-carousel="retain" data-dir="prev">‹</button>
               <button class="cbtn" type="button" aria-label="Next" data-carousel="retain" data-dir="next">›</button>
@@ -906,52 +838,49 @@
 
           <div class="carousel" data-carousel-id="retain">
             <div class="track">
-
               <article class="slide">
                 <div class="tag">Starter Retainer</div>
                 <div class="pricebig">£250 <span>/ month</span></div>
-                <div class="subtag">Best for solos & tiny firms.</div>
+                <div class="subtag">Ideal for solos & boutique firms wanting steady overflow capacity.</div>
 
                 <div class="bullets">
-                  <div class="bitem">Includes <strong>5 short documents</strong></div>
-                  <div class="bitem">Plus <strong>3 medium documents</strong></div>
-                  <div class="bitem"><strong>Priority turnaround</strong> (48 hrs)</div>
-                  <div class="bitem"><strong>Email support</strong></div>
-                  <div class="bitem">Extra docs: <strong>–15%</strong> off standard rate</div>
+                  <div class="bitem">Includes <strong>4 short documents</strong></div>
+                  <div class="bitem">Plus <strong>1 medium document</strong></div>
+                  <div class="bitem"><strong>Priority scheduling</strong> (often 48h)</div>
+                  <div class="bitem"><strong>2 light revisions</strong> per document</div>
+                  <div class="bitem">Extra work: <strong>–20%</strong> off anchor pricing</div>
                 </div>
               </article>
 
               <article class="slide">
                 <div class="tag">Core Retainer</div>
                 <div class="pricebig">£500 <span>/ month</span></div>
-                <div class="subtag"><strong>Default recommendation.</strong> Best overall value.</div>
+                <div class="subtag"><strong>Best for busy teams.</strong> Most popular tier.</div>
 
                 <div class="bullets">
-                  <div class="bitem">Includes <strong>8 short docs</strong></div>
-                  <div class="bitem">And <strong>5 medium docs</strong></div>
-                  <div class="bitem">And <strong>3 long docs</strong></div>
+                  <div class="bitem">Includes <strong>8 short documents</strong></div>
+                  <div class="bitem">And <strong>3 medium documents</strong></div>
+                  <div class="bitem">And <strong>1 long document</strong></div>
                   <div class="bitem"><strong>2 light revisions</strong> per document</div>
-                  <div class="bitem"><strong>48–72h</strong> turnaround (priority scheduling)</div>
-                  <div class="bitem">Extra docs: <strong>–25%</strong> off</div>
+                  <div class="bitem"><strong>24–48h priority</strong> (when feasible)</div>
+                  <div class="bitem">Extra work: <strong>–30%</strong> off anchor pricing</div>
                 </div>
               </article>
 
               <article class="slide">
                 <div class="tag">Heavy Use Retainer</div>
                 <div class="pricebig">£900–£1,200 <span>/ month</span></div>
-                <div class="subtag">For small commercial teams.</div>
+                <div class="subtag">For small commercial teams and repeat-heavy months.</div>
 
                 <div class="bullets">
-                  <div class="bitem">Includes <strong>15 short docs</strong></div>
-                  <div class="bitem">And <strong>10 medium docs</strong></div>
-                  <div class="bitem">And <strong>5 long docs</strong></div>
+                  <div class="bitem">Includes <strong>14 short documents</strong></div>
+                  <div class="bitem">And <strong>6 medium documents</strong></div>
+                  <div class="bitem">And <strong>3 long documents</strong></div>
                   <div class="bitem"><strong>2 light revisions</strong> per document</div>
-                  <div class="bitem"><strong>Same-day drafts</strong> (when possible)</div>
-                  <div class="bitem"><strong>Email support</strong></div>
-                  <div class="bitem">Extra docs: <strong>–30%</strong> off</div>
+                  <div class="bitem"><strong>Expedite priority</strong> (same-day when possible)</div>
+                  <div class="bitem">Extra work: <strong>–35%</strong> off anchor pricing</div>
                 </div>
               </article>
-
             </div>
           </div>
         </div>
@@ -959,158 +888,150 @@
         <div class="pricing-foot">
           <p class="pricing-disclaimer">
             DraftCore provides drafting and preparatory support only. We do not provide legal advice, legal representation, or regulated legal services.
-            All documents should be reviewed by a qualified solicitor prior to use. Urgent turnaround fees apply as set out above (subject to capacity).
+            All documents should be reviewed by a qualified solicitor prior to use. Samples are available on request. Data is deleted within 21 days of completion unless retention is required for legal, regulatory, or accounting purposes.
           </p>
         </div>
-
       </div>
     </section>
 
-    <section id="trust" class="section anchor">
-      <h2>Trust & confidentiality</h2>
-      <p>Professional handling, clear boundaries, and discreet integration into your workflow.</p>
-
-      <div class="two-col">
-        <div class="list">
-          <h3>Discretion by default</h3>
-          <ul>
-            <li>Work is handled remotely and privately.</li>
-            <li>We can operate as an extension of your back-office drafting workflow.</li>
-            <li>NDA available on request prior to sharing sensitive materials.</li>
-          </ul>
-        </div>
-
-        <div class="list">
-          <h3>Data handling</h3>
-          <ul>
-            <li>Materials are handled confidentially and used only to deliver the instructed draft.</li>
-            <li>Working files are <strong>deleted within 21 days</strong> of job completion, unless you request earlier deletion or ask us to retain materials for a continuing instruction.</li>
-            <li><strong>Samples:</strong> example outputs can be provided on request (sanitised / anonymised).</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="callout">
-        <h3>Scope boundary</h3>
-        <p>
-          DraftCore provides drafting support only. We do not provide legal advice, legal representation, or regulated legal services.
-          You retain full control, review, and sign-off.
-        </p>
-      </div>
-    </section>
-
-    <section id="testimonials" class="section anchor">
+    <span id="testimonials" class="anchor"></span>
+    <section class="section">
       <h2>Testimonials</h2>
-      <p>Feedback from solicitors and firms using DraftCore for overflow drafting capacity.</p>
+      <p>Firms use DraftCore as quiet overflow capacity — clean drafts, consistent structure, minimal back-and-forth.</p>
 
       <div class="tgrid">
         <div class="tcard">
           <div class="tmeta">
-            <div>
-              <strong>Managing Partner, Boutique Litigation Firm</strong>
-            </div>
-            <div class="trate">5/5</div>
+            <strong>Managing Partner, Boutique Litigation Firm</strong>
+            <span class="rating">5/5</span>
           </div>
           <p>
-            “We signed up for the £250 entry-level retainer to help manage our overflow of basic procedural documents. For a firm of our size, it has been an absolute game-changer. The turnaround is consistently sharp, and the quality of the drafts often exceeds what we’d expect at this price point. It’s allowed our senior associates to step away from the ‘grunt work’ and focus on high-level strategy. Highly recommended for firms looking for cost-effective, reliable support.”
+            "We signed up for the £250 entry-level retainer to help manage our overflow of basic procedural documents.
+            For a firm of our size, it has been an absolute game-changer. The turnaround is consistently sharp, and the quality
+            of the drafts often exceeds what we’d expect at this price point. It’s allowed our senior associates to step away
+            from the ‘grunt work’ and focus on high-level strategy. Highly recommended for firms looking for cost-effective, reliable support."
           </p>
         </div>
 
         <div class="tcard">
           <div class="tmeta">
-            <div>
-              <strong>Senior Associate, Mid-Sized Commercial Practice</strong>
-            </div>
-            <div class="trate">5/5</div>
+            <strong>Senior Associate, Mid-Sized Commercial Practice</strong>
+            <span class="rating">5/5</span>
           </div>
           <p>
-            “Draftcore’s £500 monthly retainer has become an essential part of our workflow. We primarily use this for more detailed commercial contracts and shareholder agreements. Having a dedicated drafting resource that understands the nuances of UK law without the overhead of a full-time hire is a huge competitive advantage. Their attention to detail on bespoke clauses is particularly impressive.”
+            "Draftcore’s £500 monthly retainer has become an essential part of our workflow. We primarily use this for more detailed
+            commercial contracts and shareholder agreements. Having a dedicated drafting resource that understands the nuances of UK law
+            without the overhead of a full-time hire is a huge competitive advantage. Their attention to detail on bespoke clauses is particularly impressive."
           </p>
         </div>
 
         <div class="tcard">
           <div class="tmeta">
-            <div>
-              <strong>Principal Solicitor, High-Street Multi-Disciplinary Firm</strong>
-            </div>
-            <div class="trate">4/5</div>
+            <strong>Principal Solicitor, High-Street Multi-Disciplinary Firm</strong>
+            <span class="rating">4/5</span>
           </div>
           <p>
-            “Excellent value for the £500 tier. We’ve used Draftcore for several months now to handle our property and employment law drafting. The documents are well-structured, compliant, and require very little ‘polishing’ on our end. It has significantly improved our internal turnaround times, which has, in turn, boosted our client satisfaction scores. A very professional outfit.”
+            "Excellent value for the £500 tier. We’ve used Draftcore for several months now to handle our property and employment law drafting.
+            The documents are well-structured, compliant, and require very little ‘polishing’ on our end. It has significantly improved our internal turnaround times,
+            which has, in turn, boosted our client satisfaction scores. A very professional outfit."
           </p>
         </div>
 
         <div class="tcard">
           <div class="tmeta">
-            <div>
-              <strong>Partner, Corporate Law Specialist</strong>
-            </div>
-            <div class="trate">5/5</div>
+            <strong>Partner, Corporate Law Specialist (Medium Document)</strong>
+            <span class="rating">5/5</span>
           </div>
           <p>
-            “I recently instructed Draftcore for a medium-length, complex service level agreement for an individual client. I was impressed by the depth of their initial consultation and how quickly they grasped the specific commercial risks involved. The draft was clean, precise, and required almost no revisions. It saved me hours of drafting time, and the client was thrilled with the result.”
+            "I recently instructed Draftcore for a medium-length, complex service level agreement for an individual client.
+            I was impressed by the depth of their initial consultation and how quickly they grasped the specific commercial risks involved.
+            The draft was clean, precise, and required almost no revisions. It saved me hours of drafting time, and the client was thrilled with the result."
           </p>
         </div>
 
         <div class="tcard">
           <div class="tmeta">
-            <div>
-              <strong>Consultant Solicitor, Private Client Services</strong>
-            </div>
-            <div class="trate">5/5</div>
+            <strong>Consultant Solicitor, Private Client Services (Long Document)</strong>
+            <span class="rating">5/5</span>
           </div>
           <p>
-            “Working on a long-form complex trust deed for a high-net-worth individual, I turned to Draftcore for the heavy lifting. The document was extensive and required careful cross-referencing of various tax implications. The final product was technically sound and elegantly drafted. For any solicitor managing a heavy caseload, their individual drafting service is a lifeline for longer, more technical documents.”
+            "Working on a long-form complex trust deed for a high-net-worth individual, I turned to Draftcore for the heavy lifting.
+            The document was extensive and required careful cross-referencing of various tax implications. The final product was technically sound and elegantly drafted.
+            For any solicitor managing a heavy caseload, their individual drafting service is a lifeline for longer, more technical documents."
           </p>
         </div>
 
         <div class="tcard">
           <div class="tmeta">
-            <div>
-              <strong>Director, Family & Probate Law Firm</strong>
-            </div>
-            <div class="trate">4/5</div>
+            <strong>Director, Family & Probate Law Firm (Medium Document)</strong>
+            <span class="rating">4/5</span>
           </div>
           <p>
-            “We used Draftcore for a medium-length set of bespoke articles and a complex Will for a client with international assets. The technical accuracy was spot on. What I appreciate most is their 'anonymous' integration; they feel like an extension of our own back office. The documents are delivered in a format that makes it easy for us to apply our firm’s branding and finalise for the client. Exceptional quality for the price.”
+            "We used Draftcore for a medium-length set of bespoke articles and a complex Will for a client with international assets.
+            The technical accuracy was spot on. What I appreciate most is their 'anonymous' integration; they feel like an extension of our own back office.
+            The documents are delivered in a format that makes it easy for us to apply our firm’s branding and finalise for the client. Exceptional quality for the price."
           </p>
         </div>
       </div>
+
+      <p class="fine" style="margin-top:12px;">
+        Samples can be provided on request (redacted as appropriate). DraftCore does not display individual identities or client names on this site.
+      </p>
     </section>
 
-    <section id="faq" class="section anchor">
+    <span id="faq" class="anchor"></span>
+    <section class="section">
       <h2>FAQs</h2>
       <p>Clear boundaries. Clean work. No ambiguity.</p>
 
       <div style="margin-top:14px; display:grid; gap:10px;">
         <details>
           <summary>Do you provide legal advice or representation?</summary>
-          <p>No. DraftCore provides document drafting and preparatory support only. You should obtain solicitor review/advice before using any document.</p>
-        </details>
-
-        <details>
-          <summary>What is included in a “light revision”?</summary>
-          <p>A light revision covers reasonable drafting adjustments based on your feedback (e.g., wording changes, modest clause tweaks, formatting consistency). Major restructures, new document scopes, or significant additional requirements may be treated as a new instruction.</p>
+          <p>
+            No. DraftCore provides document drafting and preparatory support only. You should obtain solicitor review/advice before using any document.
+          </p>
         </details>
 
         <details>
           <summary>What is the usual turnaround?</summary>
-          <p>Standard turnaround is typically 48–72 hours depending on complexity and workload. Urgent 24h and 12h options are available for an additional fee (subject to capacity and confirmation).</p>
+          <p>
+            Standard turnaround is 48–72 hours depending on complexity and workload. If you need 24h or 12h, expedited fees apply (subject to availability).
+          </p>
         </details>
 
         <details>
-          <summary>How do firms use you without disrupting their workflow?</summary>
-          <p>You send a brief (and precedent if you have one). DraftCore delivers a clean first draft in your preferred style. Your solicitor then reviews, advises, and finalises as normal.</p>
+          <summary>Are revisions included?</summary>
+          <p>
+            Yes. Ad-hoc documents include 1 light revision. Retainer documents include 2 light revisions. (A “light revision” means reasonable amends consistent with the original brief, not a change of deal direction.)
+          </p>
         </details>
 
         <details>
           <summary>How is confidentiality handled?</summary>
-          <p>Discreet handling by default. NDA available on request. Working files are deleted within 21 days of job completion unless you request earlier deletion or ask us to retain materials for ongoing instruction.</p>
+          <p>
+            Discreet handling by default. If you require an NDA before sending documents, say so in your email and we’ll accommodate. Data is deleted within 21 days of job completion unless retention is required for legal, regulatory, or accounting purposes.
+          </p>
         </details>
 
         <details>
           <summary>Can you provide samples?</summary>
-          <p>Yes — samples can be provided on request in an anonymised/sanitised format.</p>
+          <p>
+            Yes — samples can be provided on request (redacted as appropriate). We also work in a format that makes it easy for firms to apply their own branding and finalise internally.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do firms use you without disrupting their workflow?</summary>
+          <p>
+            You email a brief (and a precedent if you have one). DraftCore delivers a clean first draft aligned to your style. Your solicitor then reviews, advises, and finalises as normal.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do I instruct DraftCore?</summary>
+          <p>
+            Email hello@draftcore.co.uk with: (1) document type, (2) parties, (3) what the document needs to achieve, (4) deadline, and (5) any precedent or existing draft. We reply with a quote.
+          </p>
         </details>
       </div>
     </section>
@@ -1118,8 +1039,89 @@
     <section class="section">
       <h2>Contact</h2>
       <p>
-        To request a quote, email with the document type, context, and deadline. Attach any precedent or existing draft if available.
+        Email-only service. To request a quote, email with the document type, context, and deadline. Attach any precedent or existing draft if available.
       </p>
-      <div class="hero-cta" style="margin-top:14px">
-        <a class="btn primary"
-           href="mailto:hello@draftcore.co.uk?subject=DraftCore%20—%20Drafting%20Support%20Enquiry&body=Hi%20DraftCore%2C%0A%0AI%27d%20like%20drafting%20support%20for%20%5Bdocument%20type%5D.%0A%0AContext%3A%20%5Bbrief%5D%0ATimeline%3A%20%5Bstandard%2048%E2%80%9372h%20%2F%2024h%20%2F%2012h%5D%0AAny%20existing%20draft%2Fprecedent%3A%20%5Byes%2Fno%5D%0APreferred%20format%3A%20%5BWord%2FPDF%5D%0
+      <p class="emailline" style="margin-top:12px;">
+        Email: <a href="mailto:hello@draftcore.co.uk">hello@draftcore.co.uk</a>
+      </p>
+      <p class="fine" style="margin-top:10px;">
+        If you found DraftCore via a cold email, the simplest route is to reply to that email with your brief.
+      </p>
+    </section>
+
+    <footer>
+      <strong>DraftCore</strong> — Legal drafting support.<br />
+      DraftCore provides document drafting and preparatory support only. We do not provide legal advice, legal representation, or regulated legal services.
+      All documents should be reviewed by a qualified solicitor prior to use.<br /><br />
+      © <span id="year"></span> DraftCore. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple carousel logic (no libraries)
+    const carousels = {
+      docs: { index: 0 },
+      retain: { index: 0 }
+    };
+
+    function updateCarousel(id){
+      const carousel = document.querySelector(`.carousel[data-carousel-id="${id}"]`);
+      if(!carousel) return;
+
+      const track = carousel.querySelector(".track");
+      const slides = carousel.querySelectorAll(".slide");
+      const count = slides.length;
+
+      // wrap
+      if(carousels[id].index < 0) carousels[id].index = count - 1;
+      if(carousels[id].index >= count) carousels[id].index = 0;
+
+      const x = -carousels[id].index * 100;
+      track.style.transform = `translateX(${x}%)`;
+    }
+
+    document.querySelectorAll(".cbtn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const id = btn.getAttribute("data-carousel");
+        const dir = btn.getAttribute("data-dir");
+        if(!carousels[id]) return;
+
+        carousels[id].index += (dir === "next" ? 1 : -1);
+        updateCarousel(id);
+      });
+    });
+
+    // Init
+    updateCarousel("docs");
+    updateCarousel("retain");
+
+    // Swipe support (mobile)
+    function enableSwipe(id){
+      const carousel = document.querySelector(`.carousel[data-carousel-id="${id}"]`);
+      if(!carousel) return;
+
+      let startX = 0;
+      let endX = 0;
+
+      carousel.addEventListener("touchstart", (e) => {
+        startX = e.changedTouches[0].screenX;
+      }, {passive:true});
+
+      carousel.addEventListener("touchend", (e) => {
+        endX = e.changedTouches[0].screenX;
+        const dx = endX - startX;
+        if(Math.abs(dx) < 40) return;
+
+        carousels[id].index += (dx < 0 ? 1 : -1);
+        updateCarousel(id);
+      }, {passive:true});
+    }
+
+    enableSwipe("docs");
+    enableSwipe("retain");
+  </script>
+</body>
+</html>
