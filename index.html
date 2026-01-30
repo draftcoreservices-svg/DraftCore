@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DraftCore — Legal Drafting Support</title>
-  <meta
-    name="description"
-    content="DraftCore provides discreet first-draft and preparatory legal document drafting support for solicitors, firms, and private individuals."
-  />
+  <meta name="description" content="DraftCore provides discreet first-draft and preparatory legal document drafting support for solicitors, firms, and private individuals." />
+
   <style>
     :root{
       --bg:#ffffff;
@@ -21,6 +19,8 @@
       --radius: 18px;
       --radius2: 22px;
       --max: 1120px;
+
+      --focus: rgba(201,162,39,0.35);
     }
 
     *{box-sizing:border-box}
@@ -37,6 +37,12 @@
     }
 
     a{color:inherit}
+    a:focus-visible, button:focus-visible, summary:focus-visible{
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
+
     .wrap{max-width:var(--max); margin:0 auto; padding: 26px 18px 80px}
 
     /* Top bar */
@@ -107,7 +113,7 @@
       background: rgba(11,11,15,0.03);
     }
 
-    /* Single CTA (hero only) */
+    /* Single CTA button (hero only) */
     .btn{
       display:inline-flex;
       align-items:center;
@@ -196,7 +202,6 @@
       background: var(--gold);
       box-shadow: 0 0 0 4px rgba(201,162,39,0.14);
     }
-
     h1{
       margin: 14px 0 10px;
       font-size: 42px;
@@ -210,11 +215,16 @@
       color: var(--muted);
       font-size: 15.5px;
       line-height: 1.75;
-      max-width: 72ch;
+      max-width: 74ch;
     }
-
     .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px}
-    .mini{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px; }
+
+    .mini{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 16px;
+    }
     .pill{
       display:inline-flex;
       gap:8px;
@@ -229,9 +239,21 @@
     .fine{
       margin-top: 12px;
       font-size: 12.5px;
-      color: rgba(75,75,85,0.9);
+      color: rgba(75,75,85,0.92);
       line-height:1.6;
     }
+    .emailline{
+      margin-top:10px;
+      font-size:13.5px;
+      color: rgba(75,75,85,0.92);
+      line-height:1.7;
+    }
+    .emailline a{
+      text-decoration:none;
+      border-bottom: 1px solid rgba(201,162,39,0.55);
+      padding-bottom:2px;
+    }
+    .emailline a:hover{ color: var(--text); }
 
     .hero-right{ display:flex; flex-direction:column; gap: 12px; }
     .box{
@@ -254,7 +276,12 @@
       font-size: 14px;
       line-height: 1.7;
     }
-    .statgrid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top: 12px; }
+    .statgrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top: 12px;
+    }
     .stat{
       border-radius: 16px;
       border:1px solid rgba(11,11,15,0.10);
@@ -430,7 +457,7 @@
     }
     .pricing-disclaimer{
       margin:0;
-      color: rgba(75,75,85,0.9);
+      color: rgba(75,75,85,0.92);
       font-size: 12.5px;
       line-height: 1.75;
     }
@@ -465,7 +492,7 @@
       padding:6px 10px;
       border-radius:999px;
       white-space:nowrap;
-      font-weight:800;
+      font-weight:900;
     }
     .tcard p{
       margin:0;
@@ -474,7 +501,7 @@
       line-height: 1.75;
     }
 
-    /* FAQ */
+    /* FAQ-style tabs */
     details{
       border-radius: var(--radius);
       border:1px solid var(--line);
@@ -491,31 +518,19 @@
     }
     summary::-webkit-details-marker{display:none}
     details p{margin-top:10px; color:var(--muted); font-size:13.5px; line-height:1.75}
+    details ul{margin-top:10px}
 
     /* Footer */
     footer{
       margin-top: 18px;
-      color: rgba(75,75,85,0.9);
+      color: rgba(75,75,85,0.92);
       font-size: 12px;
       line-height:1.75;
       border-top: 1px solid var(--line);
       padding-top: 18px;
     }
 
-    /* helpers */
     .anchor{position:relative; top:-90px; visibility:hidden}
-    .emailline{
-      margin-top:10px;
-      font-size:13.5px;
-      color: rgba(75,75,85,0.92);
-      line-height:1.7;
-    }
-    .emailline a{
-      text-decoration:none;
-      border-bottom: 1px solid rgba(201,162,39,0.55);
-      padding-bottom:2px;
-    }
-    .emailline a:hover{ color: var(--text); }
   </style>
 </head>
 
@@ -538,6 +553,7 @@
       <div class="nav">
         <a href="#services">Services</a>
         <a href="#process">Process</a>
+        <a href="#trust">Trust</a>
         <a href="#pricing">Pricing</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#faq">FAQs</a>
@@ -546,6 +562,7 @@
   </div>
 
   <main class="wrap">
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-left">
         <div class="kicker"><span class="dot"></span> Discreet overflow drafting support for busy legal teams</div>
@@ -553,15 +570,14 @@
         <h1>Minimal fuss. Clean drafting. Fast delivery.</h1>
 
         <p class="lead">
-          DraftCore provides <strong>first-draft and preparatory legal document drafting</strong> support for
-          <strong>junior fee earners and teams under pressure</strong> — when there’s no time to draft, but standards still matter.
-          Professional structure, sensible clause flow, and consistent formatting — with clear boundaries:
-          <strong>drafting support only</strong>.
+          DraftCore provides <strong>first-draft and preparatory legal document drafting</strong> support for solicitors, firms, and private individuals.
+          Built for moments where you don’t have time to draft, but you still need a clean, sensible first pass that’s easy to review and finalise.
+          <strong>Drafting support only</strong> (no legal advice / representation).
         </p>
 
         <!-- ONE CTA (hero only) -->
         <div class="hero-cta">
-          <a class="btn primary" href="mailto:hello@draftcore.co.uk?subject=DraftCore%20—%20Drafting%20Support%20Enquiry">
+          <a class="btn primary" href="mailto:hello@draftcore.co.uk?subject=DraftCore%20—%20Get%20a%20Quote&body=Hi%20DraftCore%2C%0A%0AI%27d%20like%20a%20quote%20for%3A%20%5Bdocument%20type%5D%0A%0AContext%3A%20%5Bbrief%20background%20%2F%20what%20it%20needs%20to%20do%5D%0ADeadline%3A%20%5Bdate%20%2F%20time%5D%0AAny%20precedent%20or%20existing%20draft%3A%20%5Byes%2Fno%5D%0A%0AThanks%2C">
             <span>Get a quote</span>
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M7 17 17 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -575,51 +591,53 @@
           <span class="pill">Email-only</span>
           <span class="pill">Typical turnaround 48–72h</span>
           <span class="pill">1 light revision included (ad-hoc)</span>
-          <span class="pill">Solicitor review recommended</span>
+          <span class="pill">2 light revisions included (retainer)</span>
         </div>
 
         <p class="emailline">
-          Prefer to just reply? Email <a href="mailto:hello@draftcore.co.uk">hello@draftcore.co.uk</a> with the document type, brief context, and deadline.
+          Prefer to just send an email? Write to <a href="mailto:hello@draftcore.co.uk">hello@draftcore.co.uk</a> with the document type, brief context, and deadline.
         </p>
 
         <p class="fine">
-          DraftCore provides drafting support only (no legal advice / representation). All documents should be reviewed by a qualified solicitor prior to use.
+          DraftCore is not a law firm and does not provide regulated legal services. Drafts are prepared by UK-based legal support professionals (non-solicitors).
+          Solicitor review is recommended before use.
         </p>
       </div>
 
       <div class="hero-right">
         <div class="box">
-          <h3>Built for overflow & speed</h3>
+          <h3>Boundaries-first service model</h3>
           <div class="statgrid">
-            <div class="stat"><strong>48–72h</strong><span>Standard turnaround</span></div>
-            <div class="stat"><strong>Draft-ready</strong><span>Clean clause flow</span></div>
-            <div class="stat"><strong>Email-only</strong><span>Simple process</span></div>
-            <div class="stat"><strong>Discreet</strong><span>Confidential handling</span></div>
+            <div class="stat"><strong>48–72h</strong><span>Standard delivery</span></div>
+            <div class="stat"><strong>Clean handover</strong><span>Draft-ready formatting</span></div>
+            <div class="stat"><strong>Discreet</strong><span>Confidential by default</span></div>
+            <div class="stat"><strong>Simple</strong><span>Email → quote → draft</span></div>
           </div>
         </div>
 
         <div class="box">
           <h3>What you receive</h3>
           <p>
-            A polished first draft or clean revision aligned to the context you provide — with sensible structure,
-            definitions, commercial logic, and consistent formatting (ready for your solicitor to review and finalise).
+            A polished first draft or clean revision aligned to your brief — with sensible structure, definitions, commercial logic,
+            and consistent formatting (ready for internal review and finalisation).
           </p>
         </div>
 
         <div class="box">
-          <h3>Confidential by default</h3>
+          <h3>Confidential handling</h3>
           <p>
-            Samples available on request. Data handled discreetly and deleted within 21 days of job completion,
-            unless retention is required for legal, regulatory, or accounting purposes.
+            Discreet handling by default. Samples can be provided on request (redacted as appropriate).
+            Matter documents and client personal data are deleted within 21 days of completion where practicable.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- SERVICES -->
     <span id="services" class="anchor"></span>
     <section class="section">
       <h2>Services</h2>
-      <p>Focused, practical drafting support — deliberately tight to stay fast, safe, and useful.</p>
+      <p>Focused drafting support — deliberately tight to stay fast, safe, and useful.</p>
 
       <div class="grid3">
         <div class="card">
@@ -627,7 +645,7 @@
             <svg viewBox="0 0 24 24" fill="none"><path d="M7 7h10M7 11h10M7 15h7" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
           <h3>Commercial first drafts</h3>
-          <p>NDAs, service/consultancy agreements, and general commercial documents drafted from your brief.</p>
+          <p>NDAs, service/consultancy agreements, and other commercial documents drafted from your brief or notes.</p>
         </div>
 
         <div class="card">
@@ -635,7 +653,7 @@
             <svg viewBox="0 0 24 24" fill="none"><path d="M8 16l8-8" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M7 9l8 8" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
           <h3>Precedent adaptation</h3>
-          <p>Update an existing precedent to match the deal, parties, and commercial intent — structured and consistent.</p>
+          <p>Take your precedent and align it to the parties, deal terms, and intended commercial position — clean and consistent.</p>
         </div>
 
         <div class="card">
@@ -643,7 +661,7 @@
             <svg viewBox="0 0 24 24" fill="none"><path d="M7 10h10M7 14h7" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
           <h3>Document clean-up</h3>
-          <p>Rewrite, restructure, standardise formatting, and remove contradictions. Useful for messy drafts.</p>
+          <p>Restructure messy drafts, standardise formatting, improve flow, and remove internal contradictions.</p>
         </div>
       </div>
 
@@ -652,25 +670,26 @@
           <h3>Common document types</h3>
           <ul>
             <li>NDAs (mutual / unilateral)</li>
-            <li>Service agreements</li>
-            <li>Consultancy agreements</li>
+            <li>Service & consultancy agreements</li>
+            <li>Contractor agreements</li>
             <li>Amendments, addenda, schedules</li>
-            <li>Side letters (non-contentious)</li>
-            <li>Basic commercial terms & supporting docs</li>
+            <li>Share transfers & routine corporate documents</li>
+            <li>Heads of terms & supporting documents</li>
           </ul>
         </div>
 
         <div class="list">
-          <h3>Who we work with</h3>
+          <h3>Who this is for</h3>
           <ul>
-            <li><strong>Law firms:</strong> overflow drafting capacity, short deadlines, protecting senior time</li>
-            <li><strong>Junior fee earners:</strong> when you need the first draft done cleanly so you can keep matters moving</li>
-            <li><strong>In-house / founders / individuals:</strong> straightforward commercial documents (non-contentious)</li>
+            <li><strong>Law firms:</strong> overflow capacity, short deadlines, protecting senior time</li>
+            <li><strong>Busy teams:</strong> first drafts completed so internal review can happen sooner</li>
+            <li><strong>Individuals/founders:</strong> straightforward commercial documents (non-contentious)</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- PROCESS -->
     <span id="process" class="anchor"></span>
     <section class="section">
       <h2>Process</h2>
@@ -681,28 +700,62 @@
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="M5 6h14M5 12h14M5 18h9" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
-          <h3>1) Send the brief</h3>
-          <p>Email the context, parties, and what you want the document to achieve. Attach any precedent if you have one.</p>
+          <h3>1) Email the brief</h3>
+          <p>Send context, parties, and what the document needs to achieve. Attach any precedent or existing draft.</p>
         </div>
 
         <div class="card">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z" stroke="white" stroke-opacity="0.8" stroke-width="1.6"/></svg>
           </div>
-          <h3>2) Confirm scope & timeline</h3>
-          <p>We reply by email with a clear quote and turnaround. Standard turnaround is 48–72 hours.</p>
+          <h3>2) Quote + timeline</h3>
+          <p>You receive a clear quote and delivery time by email. Standard turnaround is 48–72h.</p>
         </div>
 
         <div class="card">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="m7 12 3 3 7-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3>3) Receive the draft</h3>
-          <p>Delivered as a clean, professionally formatted document. Your solicitor reviews, advises, and finalises as normal.</p>
+          <h3>3) Draft delivered</h3>
+          <p>Delivered as a clean, professionally formatted draft — ready for internal review and finalisation.</p>
+        </div>
+      </div>
+
+      <p class="fine" style="margin-top:12px;">
+        “Light revision” means reasonable changes consistent with the original brief. If the deal direction changes materially, we’ll confirm any revised scope and fee first.
+      </p>
+    </section>
+
+    <!-- TRUST WITHOUT IDENTITY -->
+    <span id="trust" class="anchor"></span>
+    <section class="section">
+      <h2>Trust (without the noise)</h2>
+      <p>DraftCore is designed to fit quietly into professional workflows — reliable delivery, clear boundaries, and careful handling.</p>
+
+      <div class="two-col">
+        <div class="list">
+          <h3>How DraftCore operates</h3>
+          <ul>
+            <li><strong>Email-only:</strong> simple instructions, fewer moving parts</li>
+            <li><strong>No subcontracting:</strong> work is not sent to third parties</li>
+            <li><strong>Clean handover:</strong> consistent structure + formatting for easy internal branding/finalisation</li>
+            <li><strong>NDA available:</strong> if you require an NDA before sending documents, request one by email</li>
+          </ul>
+        </div>
+
+        <div class="list">
+          <h3>Confidentiality & risk controls</h3>
+          <ul>
+            <li><strong>Drafting support only:</strong> no advice, no representation, no client communication</li>
+            <li><strong>Minimum data retained:</strong> only basic service records kept (see Privacy tab)</li>
+            <li><strong>Deletion within 21 days:</strong> matter documents and personal data removed where practicable</li>
+            <li><strong>Solicitor review recommended:</strong> all drafts should be reviewed before use</li>
+          </ul>
         </div>
       </div>
     </section>
 
+    <!-- PRICING -->
     <span id="pricing" class="anchor"></span>
     <section class="section">
       <h2>Pricing</h2>
@@ -717,7 +770,7 @@
                 Pay-per-document (anchor prices)
               </h3>
               <p style="margin:6px 0 0; color: var(--muted); font-size:14px; line-height:1.7;">
-                Market-sensible ranges. Final price confirmed after a brief scope review. Includes <strong>1 light revision</strong>.
+                Market-sensible ranges. Final quote confirmed after a brief scope review. Includes <strong>1 light revision</strong>.
               </p>
             </div>
             <div class="carousel-controls">
@@ -733,16 +786,16 @@
                 <div class="subtag">(1–3 hours solicitor time saved)</div>
 
                 <div class="ptable">
-                  <div class="prow"><div class="pname">NDA (1-way / mutual)</div><div class="pprice">£50–£90</div></div>
-                  <div class="prow"><div class="pname">Simple consultancy agreement</div><div class="pprice">£80–£130</div></div>
-                  <div class="prow"><div class="pname">Contractor agreement</div><div class="pprice">£80–£140</div></div>
-                  <div class="prow"><div class="pname">Basic service agreement</div><div class="pprice">£100–£160</div></div>
-                  <div class="prow"><div class="pname">Amendment / variation agreement</div><div class="pprice">£50–£80</div></div>
-                  <div class="prow"><div class="pname">Deed of assignment (simple)</div><div class="pprice">£70–£120</div></div>
+                  <div class="prow"><div class="pname">NDA (1-way / mutual)</div><div class="pprice">£60–£105</div></div>
+                  <div class="prow"><div class="pname">Simple consultancy agreement</div><div class="pprice">£95–£150</div></div>
+                  <div class="prow"><div class="pname">Contractor agreement</div><div class="pprice">£95–£160</div></div>
+                  <div class="prow"><div class="pname">Basic service agreement</div><div class="pprice">£115–£185</div></div>
+                  <div class="prow"><div class="pname">Amendment / variation agreement</div><div class="pprice">£60–£90</div></div>
+                  <div class="prow"><div class="pname">Deed of assignment (simple)</div><div class="pprice">£80–£140</div></div>
                 </div>
 
                 <p class="carousel-note">
-                  Standard turnaround: <strong>48–72h</strong>. Faster turnaround available (fees below).
+                  Standard turnaround: <strong>48–72h</strong>. Faster turnaround available (fees below). Retainers receive priority scheduling.
                 </p>
               </article>
 
@@ -751,11 +804,11 @@
                 <div class="subtag">(3–6 hours solicitor time saved)</div>
 
                 <div class="ptable">
-                  <div class="prow"><div class="pname">Share transfer form + board minutes</div><div class="pprice">£100–£180</div></div>
-                  <div class="prow"><div class="pname">Shareholders’ resolutions (routine)</div><div class="pprice">£80–£160</div></div>
-                  <div class="prow"><div class="pname">Commercial licence agreement</div><div class="pprice">£120–£220</div></div>
-                  <div class="prow"><div class="pname">Settlement agreement (non-employment)</div><div class="pprice">£130–£250</div></div>
-                  <div class="prow"><div class="pname">Heads of terms</div><div class="pprice">£120–£180</div></div>
+                  <div class="prow"><div class="pname">Share transfer form + board minutes</div><div class="pprice">£115–£210</div></div>
+                  <div class="prow"><div class="pname">Shareholders’ resolutions (routine)</div><div class="pprice">£95–£185</div></div>
+                  <div class="prow"><div class="pname">Commercial licence agreement</div><div class="pprice">£140–£255</div></div>
+                  <div class="prow"><div class="pname">Settlement agreement (non-employment)</div><div class="pprice">£150–£290</div></div>
+                  <div class="prow"><div class="pname">Heads of terms</div><div class="pprice">£140–£210</div></div>
                 </div>
 
                 <p class="carousel-note">
@@ -768,10 +821,10 @@
                 <div class="subtag">(6–10+ hours saved)</div>
 
                 <div class="ptable">
-                  <div class="prow"><div class="pname">Commercial lease (first draft)</div><div class="pprice">£200–£400</div></div>
-                  <div class="prow"><div class="pname">Framework / master services agreement</div><div class="pprice">£220–£450</div></div>
-                  <div class="prow"><div class="pname">Bespoke commercial agreement</div><div class="pprice">£250–£600</div></div>
-                  <div class="prow"><div class="pname">Document pack (multiple linked docs)</div><div class="pprice">£Dependant on pack size</div></div>
+                  <div class="prow"><div class="pname">Commercial lease (first draft)</div><div class="pprice">£230–£460</div></div>
+                  <div class="prow"><div class="pname">Framework / master services agreement</div><div class="pprice">£255–£520</div></div>
+                  <div class="prow"><div class="pname">Bespoke commercial agreement</div><div class="pprice">£290–£690</div></div>
+                  <div class="prow"><div class="pname">Document pack (multiple linked docs)</div><div class="pprice">Depends on pack size</div></div>
                 </div>
 
                 <p class="carousel-note">
@@ -799,23 +852,23 @@
             <div class="list">
               <h3>24-hour turnaround fee</h3>
               <ul>
-                <li><strong>Short:</strong> +£35</li>
-                <li><strong>Medium:</strong> +£60</li>
-                <li><strong>Long:</strong> +£120</li>
+                <li><strong>Short:</strong> +£40</li>
+                <li><strong>Medium:</strong> +£70</li>
+                <li><strong>Long:</strong> +£140</li>
               </ul>
             </div>
             <div class="list">
               <h3>12-hour turnaround fee</h3>
               <ul>
-                <li><strong>Short:</strong> +£60</li>
-                <li><strong>Medium:</strong> +£100</li>
-                <li><strong>Long:</strong> +£200</li>
+                <li><strong>Short:</strong> +£70</li>
+                <li><strong>Medium:</strong> +£115</li>
+                <li><strong>Long:</strong> +£230</li>
               </ul>
             </div>
           </div>
 
           <p class="carousel-note" style="margin-top:14px;">
-            Expedited delivery is confirmed by email once scope is agreed. Retainers receive priority scheduling.
+            Expedited delivery is confirmed by email once scope is agreed. If a deadline is unrealistic for the scope, we’ll tell you quickly.
           </p>
         </div>
 
@@ -827,7 +880,7 @@
                 Retainers (best value)
               </h3>
               <p style="margin:6px 0 0; color: var(--muted); font-size:14px; line-height:1.7;">
-                Predictable monthly capacity for firms who want reliable drafting support. Includes <strong>2 light revisions</strong> per document.
+                Predictable monthly capacity for firms who want reliable drafting support. Includes <strong>2 light revisions</strong> per document and priority scheduling.
               </p>
             </div>
             <div class="carousel-controls">
@@ -840,45 +893,45 @@
             <div class="track">
               <article class="slide">
                 <div class="tag">Starter Retainer</div>
-                <div class="pricebig">£250 <span>/ month</span></div>
-                <div class="subtag">Ideal for solos & boutique firms wanting steady overflow capacity.</div>
+                <div class="pricebig">£290 <span>/ month</span></div>
+                <div class="subtag">For solos and boutique firms wanting consistent overflow capacity.</div>
 
                 <div class="bullets">
-                  <div class="bitem">Includes <strong>4 short documents</strong></div>
-                  <div class="bitem">Plus <strong>1 medium document</strong></div>
+                  <div class="bitem">Includes <strong>5 short documents</strong></div>
+                  <div class="bitem">Plus <strong>2 medium documents</strong></div>
                   <div class="bitem"><strong>Priority scheduling</strong> (often 48h)</div>
                   <div class="bitem"><strong>2 light revisions</strong> per document</div>
-                  <div class="bitem">Extra work: <strong>–20%</strong> off anchor pricing</div>
+                  <div class="bitem">Extra work: <strong>–25%</strong> off anchor pricing</div>
                 </div>
               </article>
 
               <article class="slide">
                 <div class="tag">Core Retainer</div>
-                <div class="pricebig">£500 <span>/ month</span></div>
-                <div class="subtag"><strong>Best for busy teams.</strong> Most popular tier.</div>
+                <div class="pricebig">£575 <span>/ month</span></div>
+                <div class="subtag"><strong>Most popular.</strong> Best for busy teams.</div>
 
                 <div class="bullets">
-                  <div class="bitem">Includes <strong>8 short documents</strong></div>
-                  <div class="bitem">And <strong>3 medium documents</strong></div>
-                  <div class="bitem">And <strong>1 long document</strong></div>
+                  <div class="bitem">Includes <strong>10 short documents</strong></div>
+                  <div class="bitem">And <strong>4 medium documents</strong></div>
+                  <div class="bitem">And <strong>2 long documents</strong></div>
                   <div class="bitem"><strong>2 light revisions</strong> per document</div>
                   <div class="bitem"><strong>24–48h priority</strong> (when feasible)</div>
-                  <div class="bitem">Extra work: <strong>–30%</strong> off anchor pricing</div>
+                  <div class="bitem">Extra work: <strong>–35%</strong> off anchor pricing</div>
                 </div>
               </article>
 
               <article class="slide">
                 <div class="tag">Heavy Use Retainer</div>
-                <div class="pricebig">£900–£1,200 <span>/ month</span></div>
-                <div class="subtag">For small commercial teams and repeat-heavy months.</div>
+                <div class="pricebig">£1,050–£1,380 <span>/ month</span></div>
+                <div class="subtag">For repeat-heavy months and small commercial teams.</div>
 
                 <div class="bullets">
-                  <div class="bitem">Includes <strong>14 short documents</strong></div>
-                  <div class="bitem">And <strong>6 medium documents</strong></div>
-                  <div class="bitem">And <strong>3 long documents</strong></div>
+                  <div class="bitem">Includes <strong>18 short documents</strong></div>
+                  <div class="bitem">And <strong>8 medium documents</strong></div>
+                  <div class="bitem">And <strong>4 long documents</strong></div>
                   <div class="bitem"><strong>2 light revisions</strong> per document</div>
                   <div class="bitem"><strong>Expedite priority</strong> (same-day when possible)</div>
-                  <div class="bitem">Extra work: <strong>–35%</strong> off anchor pricing</div>
+                  <div class="bitem">Extra work: <strong>–40%</strong> off anchor pricing</div>
                 </div>
               </article>
             </div>
@@ -888,16 +941,18 @@
         <div class="pricing-foot">
           <p class="pricing-disclaimer">
             DraftCore provides drafting and preparatory support only. We do not provide legal advice, legal representation, or regulated legal services.
-            All documents should be reviewed by a qualified solicitor prior to use. Samples are available on request. Data is deleted within 21 days of completion unless retention is required for legal, regulatory, or accounting purposes.
+            All documents should be reviewed by a qualified solicitor prior to use. Samples can be provided on request (redacted as appropriate).
+            Matter documents and client personal data are deleted within 21 days of completion where practicable (see Privacy tab).
           </p>
         </div>
       </div>
     </section>
 
+    <!-- TESTIMONIALS -->
     <span id="testimonials" class="anchor"></span>
     <section class="section">
       <h2>Testimonials</h2>
-      <p>Firms use DraftCore as quiet overflow capacity — clean drafts, consistent structure, minimal back-and-forth.</p>
+      <p>Feedback from firms who use DraftCore as quiet overflow capacity — clean drafts, consistent structure, minimal back-and-forth.</p>
 
       <div class="tgrid">
         <div class="tcard">
@@ -906,10 +961,7 @@
             <span class="rating">5/5</span>
           </div>
           <p>
-            "We signed up for the £250 entry-level retainer to help manage our overflow of basic procedural documents.
-            For a firm of our size, it has been an absolute game-changer. The turnaround is consistently sharp, and the quality
-            of the drafts often exceeds what we’d expect at this price point. It’s allowed our senior associates to step away
-            from the ‘grunt work’ and focus on high-level strategy. Highly recommended for firms looking for cost-effective, reliable support."
+            We tried the entry retainer to take pressure off the team for routine drafting. Turnaround has been consistently reliable, and the drafts land in a format that’s easy to review and finish quickly. For the cost, it’s been genuinely useful.
           </p>
         </div>
 
@@ -919,9 +971,7 @@
             <span class="rating">5/5</span>
           </div>
           <p>
-            "Draftcore’s £500 monthly retainer has become an essential part of our workflow. We primarily use this for more detailed
-            commercial contracts and shareholder agreements. Having a dedicated drafting resource that understands the nuances of UK law
-            without the overhead of a full-time hire is a huge competitive advantage. Their attention to detail on bespoke clauses is particularly impressive."
+            The monthly retainer has slotted into our workflow smoothly. The drafting is structured, commercially sensible, and reduces the time we spend getting to a solid first version. It feels like an extra pair of hands when we need it.
           </p>
         </div>
 
@@ -931,9 +981,7 @@
             <span class="rating">4/5</span>
           </div>
           <p>
-            "Excellent value for the £500 tier. We’ve used Draftcore for several months now to handle our property and employment law drafting.
-            The documents are well-structured, compliant, and require very little ‘polishing’ on our end. It has significantly improved our internal turnaround times,
-            which has, in turn, boosted our client satisfaction scores. A very professional outfit."
+            Good value for the tier we’re on. We’ve used DraftCore for repeat drafting across a few departments and it’s helped speed up internal turnaround times. The handover is tidy and needs minimal polishing.
           </p>
         </div>
 
@@ -943,9 +991,7 @@
             <span class="rating">5/5</span>
           </div>
           <p>
-            "I recently instructed Draftcore for a medium-length, complex service level agreement for an individual client.
-            I was impressed by the depth of their initial consultation and how quickly they grasped the specific commercial risks involved.
-            The draft was clean, precise, and required almost no revisions. It saved me hours of drafting time, and the client was thrilled with the result."
+            I instructed DraftCore for a more detailed medium-length agreement and the first draft came back clean and properly thought through. It saved me hours and required only minor tweaks before finalising.
           </p>
         </div>
 
@@ -955,9 +1001,7 @@
             <span class="rating">5/5</span>
           </div>
           <p>
-            "Working on a long-form complex trust deed for a high-net-worth individual, I turned to Draftcore for the heavy lifting.
-            The document was extensive and required careful cross-referencing of various tax implications. The final product was technically sound and elegantly drafted.
-            For any solicitor managing a heavy caseload, their individual drafting service is a lifeline for longer, more technical documents."
+            For longer-form drafting, this service is a real relief. The structure was consistent across the document and it was easy to review and finalise. Communication was straightforward and professional.
           </p>
         </div>
 
@@ -967,28 +1011,28 @@
             <span class="rating">4/5</span>
           </div>
           <p>
-            "We used Draftcore for a medium-length set of bespoke articles and a complex Will for a client with international assets.
-            The technical accuracy was spot on. What I appreciate most is their 'anonymous' integration; they feel like an extension of our own back office.
-            The documents are delivered in a format that makes it easy for us to apply our firm’s branding and finalise for the client. Exceptional quality for the price."
+            What I value most is how seamlessly DraftCore fits in — it feels like back-office support rather than an external supplier. The documents come in a format that makes it easy to apply our branding and complete the matter internally.
           </p>
         </div>
       </div>
 
       <p class="fine" style="margin-top:12px;">
-        Samples can be provided on request (redacted as appropriate). DraftCore does not display individual identities or client names on this site.
+        Testimonials are anonymised. DraftCore does not publish client identities or matter details on this site.
       </p>
     </section>
 
+    <!-- FAQ + POLICIES -->
     <span id="faq" class="anchor"></span>
     <section class="section">
-      <h2>FAQs</h2>
+      <h2>FAQs & Policies</h2>
       <p>Clear boundaries. Clean work. No ambiguity.</p>
 
       <div style="margin-top:14px; display:grid; gap:10px;">
         <details>
           <summary>Do you provide legal advice or representation?</summary>
           <p>
-            No. DraftCore provides document drafting and preparatory support only. You should obtain solicitor review/advice before using any document.
+            No. DraftCore provides document drafting and preparatory support only. We do not provide legal advice, legal representation, or regulated legal services.
+            Drafts should be reviewed by a qualified solicitor before use.
           </p>
         </details>
 
@@ -996,46 +1040,62 @@
           <summary>What is the usual turnaround?</summary>
           <p>
             Standard turnaround is 48–72 hours depending on complexity and workload. If you need 24h or 12h, expedited fees apply (subject to availability).
+            We confirm feasibility by email after scope review.
           </p>
         </details>
 
         <details>
           <summary>Are revisions included?</summary>
           <p>
-            Yes. Ad-hoc documents include 1 light revision. Retainer documents include 2 light revisions. (A “light revision” means reasonable amends consistent with the original brief, not a change of deal direction.)
-          </p>
-        </details>
-
-        <details>
-          <summary>How is confidentiality handled?</summary>
-          <p>
-            Discreet handling by default. If you require an NDA before sending documents, say so in your email and we’ll accommodate. Data is deleted within 21 days of job completion unless retention is required for legal, regulatory, or accounting purposes.
+            Yes. Ad-hoc documents include 1 light revision. Retainer documents include 2 light revisions.
+            A light revision means reasonable changes consistent with the original brief, not a change of deal direction.
           </p>
         </details>
 
         <details>
           <summary>Can you provide samples?</summary>
           <p>
-            Yes — samples can be provided on request (redacted as appropriate). We also work in a format that makes it easy for firms to apply their own branding and finalise internally.
+            Yes — samples can be provided on request (redacted as appropriate). DraftCore does not publish client identities or confidential matter details publicly.
           </p>
         </details>
 
         <details>
-          <summary>How do firms use you without disrupting their workflow?</summary>
+          <summary>Privacy & data handling</summary>
           <p>
-            You email a brief (and a precedent if you have one). DraftCore delivers a clean first draft aligned to your style. Your solicitor then reviews, advises, and finalises as normal.
+            DraftCore is confidentiality-first. We use information you provide only to perform the requested drafting work and to communicate about scope, delivery and invoicing.
+          </p>
+          <ul>
+            <li><strong>Access:</strong> DraftCore does not subcontract drafting work. Access to matter documents is restricted to DraftCore only.</li>
+            <li><strong>Retention:</strong> We retain only minimal service records (e.g., company name, fees charged, work category and dates) for operational and accounting purposes.</li>
+            <li><strong>Deletion:</strong> Matter documents and client personal data are deleted within 21 days of completion where practicable.</li>
+            <li><strong>Exceptions:</strong> We may retain limited information where required for legal, regulatory, tax or accounting reasons, or to resolve a dispute about scope, delivery or payment.</li>
+            <li><strong>Sharing:</strong> We do not sell data and do not share your matter documents with third parties.</li>
+          </ul>
+          <p class="fine">
+            If you require an NDA before sending documents, request one by email.
           </p>
         </details>
 
         <details>
-          <summary>How do I instruct DraftCore?</summary>
+          <summary>Refunds & cancellations</summary>
           <p>
-            Email hello@draftcore.co.uk with: (1) document type, (2) parties, (3) what the document needs to achieve, (4) deadline, and (5) any precedent or existing draft. We reply with a quote.
+            DraftCore aims to be fair and practical. Refund outcomes depend on what work has been completed and whether the issue can be remedied through revisions.
+          </p>
+          <ul>
+            <li><strong>Before work starts:</strong> if you cancel before we begin drafting, no fee is due (or any payment received will be refunded).</li>
+            <li><strong>After work starts:</strong> if drafting has started, we may charge a pro-rata amount for time spent and work completed.</li>
+            <li><strong>Quality concerns:</strong> if you believe the draft does not reflect the agreed brief, raise it promptly by email. We will use the included revision(s) to bring it in line with the brief where reasonable.</li>
+            <li><strong>Scope changes:</strong> if the brief changes materially after work starts, we will confirm revised scope and any fee adjustment before continuing.</li>
+            <li><strong>Expedited fees:</strong> expedited/priority fees are generally non-refundable once the expedited work window has been reserved and drafting has commenced.</li>
+          </ul>
+          <p class="fine">
+            This section is a general policy and does not limit any statutory rights that may apply.
           </p>
         </details>
       </div>
     </section>
 
+    <!-- CONTACT (email only) -->
     <section class="section">
       <h2>Contact</h2>
       <p>
@@ -1045,7 +1105,7 @@
         Email: <a href="mailto:hello@draftcore.co.uk">hello@draftcore.co.uk</a>
       </p>
       <p class="fine" style="margin-top:10px;">
-        If you found DraftCore via a cold email, the simplest route is to reply to that email with your brief.
+        If you reached this page from a cold email, the simplest route is to reply to that email with your brief.
       </p>
     </section>
 
