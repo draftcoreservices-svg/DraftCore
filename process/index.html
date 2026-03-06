@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Process — DraftCore</title>
+  <meta name="description" content="How DraftCore works: email in, quote, draft delivered. Simple, documented, fast." />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+<div id="cursor"></div>
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/"><div class="nav-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 7h10M7 11h10M7 15h7" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/></svg></div><div><div class="nav-name">DraftCore</div><div class="nav-sub">Legal drafting support</div></div></a>
+    <ul class="nav-links">
+      <li><a href="/"><span class="nav-num">01</span> Index</a></li>
+      <li><a href="/about/"><span class="nav-num">02</span> About</a></li>
+      <li><a href="/process/" aria-current="page"><span class="nav-num">03</span> Process</a></li>
+      <li><a href="/pricing/"><span class="nav-num">04</span> Pricing</a></li>
+      <li><a href="/reviews/"><span class="nav-num">05</span> Reviews</a></li>
+      <li><a href="/faq/"><span class="nav-num">06</span> FAQs</a></li>
+    </ul>
+    <div class="nav-cta"><a class="btn btn-primary" href="mailto:hello@draftcore.co.uk?subject=DraftCore%20—%20Get%20a%20Quote&body=Hi%20DraftCore%2C%0A%0AI%27d%20like%20a%20quote%20for%3A%20%5Bdocument%20type%5D%0AContext%3A%20%5Bbrief%20background%5D%0ADeadline%3A%20%5Bdate%5D%0A%0AThanks%2C">Get a quote</a></div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="/"><span class="num">01</span> Index</a><a href="/about/"><span class="num">02</span> About</a><a href="/process/"><span class="num">03</span> Process</a><a href="/pricing/"><span class="num">04</span> Pricing</a><a href="/reviews/"><span class="num">05</span> Reviews</a><a href="/faq/"><span class="num">06</span> FAQs</a><a href="/contact/"><span class="num">07</span> Contact</a>
+  <div class="nav-drawer-footer">hello@draftcore.co.uk</div>
+</div>
+
+<div class="page">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="page-hero-label">Process</div>
+      <h1 class="page-hero-title">Email in.<br>Quote.<br><em>Draft delivered.</em></h1>
+      <p class="page-hero-lead">The process is deliberately simple. No calls, no portals, no onboarding. Just email with the key details and we'll get started.</p>
+    </div>
+  </div>
+
+  <div style="padding:80px 0">
+    <div class="wrap">
+      <div class="section-label">How it works</div>
+      <div class="process-list reveal">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Send your brief</h3>
+            <p>Email <a href="mailto:hello@draftcore.co.uk" style="color:var(--gold);border-bottom:1px solid rgba(201,162,39,0.3)">hello@draftcore.co.uk</a> with the document type, parties, what it needs to do, and your deadline. If you have a precedent or existing draft, attach it. The more context you provide, the tighter the brief — and the better the output.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Receive a quote</h3>
+            <p>We'll review your brief and come back with a fixed quote and delivery timeline — usually within a few hours. Quotes are fixed-fee per document. No hourly rates, no surprises.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Confirm & we begin</h3>
+            <p>Reply to confirm and we start. No retainer, no onboarding form. Once confirmed, work begins immediately against your deadline.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h3>Draft delivered</h3>
+            <p>You receive a polished first draft — clean structure, consistent defined terms, sensible commercial logic, and formatted for easy review. Delivered as a Word document (.docx) ready to mark up.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">05</div>
+          <div class="step-content">
+            <h3>One light revision included</h3>
+            <p>One round of light revisions is included in every quote — covering amendments to structure, terminology, or specific clauses based on your feedback. Substantial re-drafts or scope changes are quoted separately.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:60px 0;border-top:1px solid var(--border);margin-top:60px">
+        <div class="section-label reveal">What you receive</div>
+        <h2 class="section-title reveal">A draft that's <em>ready to review.</em></h2>
+        <p class="section-lead reveal reveal-d1">Not a rough skeleton. A formatted, structured first draft with consistent definitions, sensible clause logic, and clean formatting — ready for your mark-up and finalisation.</p>
+        <div class="two-col reveal">
+          <div class="info-block">
+            <h3>Format</h3>
+            <ul>
+              <li>Delivered as Word (.docx)</li>
+              <li>Track-changes-ready formatting</li>
+              <li>Consistent heading styles</li>
+              <li>Numbered clauses and sub-clauses</li>
+              <li>Definitions block where appropriate</li>
+              <li>Clean schedules and annexes</li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <h3>Confidentiality</h3>
+            <ul>
+              <li>Discreet handling by default</li>
+              <li>NDA available on request</li>
+              <li>No subcontracting of your work</li>
+              <li>Matter docs deleted within 21 days</li>
+              <li>Client data handled per our Privacy Policy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-row reveal">
+        <a class="btn btn-primary" href="mailto:hello@draftcore.co.uk?subject=DraftCore%20—%20Get%20a%20Quote&body=Hi%20DraftCore%2C%0A%0AI%27d%20like%20a%20quote%20for%3A%20%5Bdocument%20type%5D%0AContext%3A%20%5Bbrief%20background%5D%0ADeadline%3A%20%5Bdate%5D%0A%0AThanks%2C">Get a quote</a>
+        <a class="btn btn-outline" href="/pricing/">See pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-brand-name">DraftCore</div><p class="footer-brand-desc">UK-based legal drafting support for solicitors, firms, and private individuals.</p></div>
+      <div class="footer-links"><h4>Pages</h4><ul><li><a href="/about/">About</a></li><li><a href="/process/">Process</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/reviews/">Reviews</a></li><li><a href="/faq/">FAQs</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/refunds/">Refunds</a></li></ul></div>
+      <div class="footer-legal">DraftCore provides document drafting and preparatory support only. We do not provide legal advice, legal representation, or regulated legal services. All documents should be reviewed by a qualified solicitor before use.</div>
+    </div>
+    <div class="footer-bottom"><span>© <span class="year"></span> DraftCore. All rights reserved.</span><span>draftcore.co.uk</span></div>
+  </footer>
+</div>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

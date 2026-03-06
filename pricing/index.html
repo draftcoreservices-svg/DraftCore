@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — DraftCore</title>
+  <meta name="description" content="Fixed-fee legal drafting support. No hourly rates, no surprises. Quote per document." />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+<div id="cursor"></div>
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/"><div class="nav-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 7h10M7 11h10M7 15h7" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/></svg></div><div><div class="nav-name">DraftCore</div><div class="nav-sub">Legal drafting support</div></div></a>
+    <ul class="nav-links">
+      <li><a href="/"><span class="nav-num">01</span> Index</a></li>
+      <li><a href="/about/"><span class="nav-num">02</span> About</a></li>
+      <li><a href="/process/"><span class="nav-num">03</span> Process</a></li>
+      <li><a href="/pricing/" aria-current="page"><span class="nav-num">04</span> Pricing</a></li>
+      <li><a href="/reviews/"><span class="nav-num">05</span> Reviews</a></li>
+      <li><a href="/faq/"><span class="nav-num">06</span> FAQs</a></li>
+    </ul>
+    <div class="nav-cta"><a class="btn btn-primary" href="mailto:hello@draftcore.co.uk?subject=DraftCore%20—%20Get%20a%20Quote&body=Hi%20DraftCore%2C%0A%0AI%27d%20like%20a%20quote%20for%3A%20%5Bdocument%20type%5D%0AContext%3A%20%5Bbrief%20background%5D%0ADeadline%3A%20%5Bdate%5D%0A%0AThanks%2C">Get a quote</a></div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="/"><span class="num">01</span> Index</a><a href="/about/"><span class="num">02</span> About</a><a href="/process/"><span class="num">03</span> Process</a><a href="/pricing/"><span class="num">04</span> Pricing</a><a href="/reviews/"><span class="num">05</span> Reviews</a><a href="/faq/"><span class="num">06</span> FAQs</a><a href="/contact/"><span class="num">07</span> Contact</a>
+  <div class="nav-drawer-footer">hello@draftcore.co.uk</div>
+</div>
+
+<div class="page">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="page-hero-label">Pricing</div>
+      <h1 class="page-hero-title">Fixed fee.<br><em>No surprises.</em></h1>
+      <p class="page-hero-lead">All work is quoted on a fixed-fee, per-document basis. You'll know the price before we start. No hourly rates, no scope creep billing.</p>
+    </div>
+  </div>
+
+  <div style="padding:80px 0">
+    <div class="wrap">
+      <div class="section-label reveal">Guide rates</div>
+      <h2 class="section-title reveal">What to <em>expect.</em></h2>
+      <p class="section-lead reveal reveal-d1">These are guide rates only — your quote may vary based on complexity, length, and turnaround time. Every project is quoted individually after reviewing your brief.</p>
+
+      <div class="pricing-tabs reveal">
+        <button class="ptab active" data-tab="panel-commercial">Commercial</button>
+        <button class="ptab" data-tab="panel-adaptation">Adaptation</button>
+        <button class="ptab" data-tab="panel-cleanup">Clean-Up</button>
+        <button class="ptab" data-tab="panel-retainer">Retainer</button>
+      </div>
+
+      <div id="panel-commercial" class="pricing-panel active reveal reveal-d1">
+        <div class="price-table">
+          <div class="price-row">
+            <div><div class="price-name">Simple NDA (mutual or one-way)</div><div class="price-desc">Standard bilateral or unilateral confidentiality agreement</div></div>
+            <div class="price-val">From £95</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Service / Consultancy Agreement</div><div class="price-desc">Fixed-term or ongoing service engagement agreement</div></div>
+            <div class="price-val">From £175</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Contractor / Freelancer Agreement</div><div class="price-desc">IR35-aware contractor engagement framework</div></div>
+            <div class="price-val">From £175</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Terms & Conditions (B2B)</div><div class="price-desc">Standard B2B supply or services terms</div></div>
+            <div class="price-val">From £225</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Shareholders / Investment Agreement</div><div class="price-desc">Complex multi-party agreement — quote on brief</div></div>
+            <div class="price-val">POA</div>
+          </div>
+        </div>
+        <p class="fine">All prices exclude VAT where applicable. Final quote given after brief review.</p>
+      </div>
+
+      <div id="panel-adaptation" class="pricing-panel reveal reveal-d1">
+        <div class="price-table">
+          <div class="price-row">
+            <div><div class="price-name">Short precedent (under 10 pages)</div><div class="price-desc">Party details, defined terms, commercial variables updated</div></div>
+            <div class="price-val">From £75</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Medium precedent (10–25 pages)</div><div class="price-desc">Full alignment to deal terms, parties, and schedules</div></div>
+            <div class="price-val">From £150</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Long-form precedent (25+ pages)</div><div class="price-desc">Complex adaptation — quoted on brief and page count</div></div>
+            <div class="price-val">POA</div>
+          </div>
+        </div>
+        <p class="fine">Attach your precedent when requesting a quote for fastest turnaround.</p>
+      </div>
+
+      <div id="panel-cleanup" class="pricing-panel reveal reveal-d1">
+        <div class="price-table">
+          <div class="price-row">
+            <div><div class="price-name">Formatting & consistency pass</div><div class="price-desc">Standardise styles, headings, numbering, and spacing</div></div>
+            <div class="price-val">From £60</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Structural redraft</div><div class="price-desc">Reorganise clause order, remove contradictions, tighten flow</div></div>
+            <div class="price-val">From £120</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Full document overhaul</div><div class="price-desc">Combined structural, drafting, and formatting clean-up</div></div>
+            <div class="price-val">POA</div>
+          </div>
+        </div>
+        <p class="fine">Send the document and describe the issues — we'll quote accordingly.</p>
+      </div>
+
+      <div id="panel-retainer" class="pricing-panel reveal reveal-d1">
+        <div class="price-table">
+          <div class="price-row">
+            <div><div class="price-name">Starter — 4 documents/month</div><div class="price-desc">Up to 4 standard documents per calendar month</div></div>
+            <div class="price-val">From £395/mo</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Standard — 8 documents/month</div><div class="price-desc">Up to 8 standard documents with priority turnaround</div></div>
+            <div class="price-val">From £695/mo</div>
+          </div>
+          <div class="price-row">
+            <div><div class="price-name">Flexible overflow</div><div class="price-desc">Bespoke arrangement — contact us to discuss</div></div>
+            <div class="price-val">POA</div>
+          </div>
+        </div>
+        <p class="fine">Retainer pricing available for firms with regular volume. Unused capacity does not roll over. Contact us to discuss a bespoke arrangement.</p>
+      </div>
+
+      <div class="btn-row reveal">
+        <a class="btn btn-primary" href="mailto:hello@draftcore.co.uk?subject=DraftCore%20—%20Get%20a%20Quote&body=Hi%20DraftCore%2C%0A%0AI%27d%20like%20a%20quote%20for%3A%20%5Bdocument%20type%5D%0AContext%3A%20%5Bbrief%20background%5D%0ADeadline%3A%20%5Bdate%5D%0A%0AThanks%2C">Request a quote</a>
+        <a class="btn btn-outline" href="/faq/">Read FAQs</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-brand-name">DraftCore</div><p class="footer-brand-desc">UK-based legal drafting support for solicitors, firms, and private individuals.</p></div>
+      <div class="footer-links"><h4>Pages</h4><ul><li><a href="/about/">About</a></li><li><a href="/process/">Process</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/reviews/">Reviews</a></li><li><a href="/faq/">FAQs</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/refunds/">Refunds</a></li></ul></div>
+      <div class="footer-legal">DraftCore provides document drafting and preparatory support only. We do not provide legal advice, legal representation, or regulated legal services. All documents should be reviewed by a qualified solicitor before use.</div>
+    </div>
+    <div class="footer-bottom"><span>© <span class="year"></span> DraftCore. All rights reserved.</span><span>draftcore.co.uk</span></div>
+  </footer>
+</div>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
